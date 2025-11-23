@@ -1,6 +1,7 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import React, { useContext, useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { NavbarContext } from '../../context/NavContext'
 
 const FullScreenNav = () => {
@@ -100,7 +101,7 @@ const FullScreenNav = () => {
                     </div>
                 </div>
                 <div className=' py-36'>
-                    <div className='link origin-top relative border-t-1 border-white'>
+                    <Link to='/projects' onClick={() => setNavOpen(false)} className='link origin-top relative border-t-1 border-white block'>
                         <h1 className='font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase'>Projets</h1>
                         <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
                             <div className='moveX flex items-center'>
@@ -117,8 +118,8 @@ const FullScreenNav = () => {
                             </div>
                         </div>
 
-                    </div>
-                    <div className='link origin-top relative border-t-1 border-white'>
+                    </Link>
+                    <Link to='/agence' onClick={() => setNavOpen(false)} className='link origin-top relative border-t-1 border-white block'>
                         <h1 className='font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase'>Agence</h1>
                         <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
                             <div className='moveX flex items-center'>
@@ -135,8 +136,8 @@ const FullScreenNav = () => {
                             </div>
                         </div>
 
-                    </div>
-                    <div className='link origin-top relative border-t-1 border-white'>
+                    </Link>
+                    <Link to='/contact' onClick={() => setNavOpen(false)} className='link origin-top relative border-t-1 border-white block'>
                         <h1 className='font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase'>Contact</h1>
                         <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
                             <div className='moveX flex items-center'>
@@ -153,7 +154,7 @@ const FullScreenNav = () => {
                             </div>
                         </div>
 
-                    </div>
+                    </Link>
                     <div className='link origin-top relative border-y-1 border-white'>
                         <h1 className='font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase'>Blogs</h1>
                         <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>

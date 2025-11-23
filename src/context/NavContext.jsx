@@ -12,7 +12,7 @@ const NavContext = ({ children }) => {
 
     const locate = useLocation().pathname
     useEffect(function(){
-        if(locate == '/projects' || locate == '/agence'){
+        if(locate == '/projects' || locate == '/agence' || locate == '/contact' || locate.startsWith('/project/')){
             setNavColor('black')
         }else{
             setNavColor('white')
