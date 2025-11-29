@@ -8,7 +8,7 @@ const Navbar = () => {
     const [navColor, setNavColor] = useContext(NavbarColorContext)
 
     return (
-        <div className='z-4 flex fixed top-0 w-full items-start justify-between'>
+        <div className='z-40 flex fixed top-0 left-0 w-full items-start justify-between'>
             <div className='lg:p-5 p-2 '>
                 <div className='lg:w-36 w-24'>
                     <svg className=' w-full' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 44">

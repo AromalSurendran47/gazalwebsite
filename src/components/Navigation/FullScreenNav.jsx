@@ -73,7 +73,11 @@ const FullScreenNav = () => {
     }, [navOpen])
 
     return (
-        <div ref={fullScreenRef} id='fullscreennav' className='fullscreennav hidden text-white overflow-hidden h-screen w-full z-50 absolute'>
+        <div
+            ref={fullScreenRef}
+            id='fullscreennav'
+            className='fullscreennav hidden fixed inset-0 text-white overflow-hidden h-screen w-full z-50'
+        >
             <div className='h-screen w-full fixed'>
                 <div className='h-full w-full flex'>
                     <div className='stairing h-full w-1/5 bg-black'></div>
