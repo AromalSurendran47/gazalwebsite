@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const links = [
-  { label: 'Projets', subtitle: 'Pour tout voir', to: '/projects' },
-  { label: 'Agence', subtitle: 'Notre esprit', to: '/agence' },
-  { label: 'Contact', subtitle: 'Dire bonjour', to: '/contact' }
+  { label: 'Projects', subtitle: 'To see everything', to: '/projects' },
+  { label: 'Agency', subtitle: 'Our spirit', to: '/agence' },
+  { label: 'Contact', subtitle: 'Say hello', to: '/contact' }
 ]
 
 const HomeBottomText = () => {
@@ -14,9 +14,9 @@ const HomeBottomText = () => {
         <div className='absolute -top-1 left-5 lg:left-12 h-2 w-16 bg-[#D3FD50]' />
         <div className='grid gap-10 lg:grid-cols-[1.1fr_0.9fr_1fr] items-start'>
           <p className='text-sm lg:text-lg leading-relaxed text-white/80 max-w-xl'>
-            K72 est une agence qui pense chaque action pour nourrir la marque aujourd&apos;hui,
-            demain, dans 5 mois et dans 5 ans. Nous cherchons la friction qui crée l’étincelle pour
-            générer de l’émotion. Sans filtre, on dit ce qui doit être dit, on fait ce qui doit être fait.
+            K72 is an agency that thinks every action to nurture the brand today,
+            tomorrow, in 5 months and in 5 years. We seek the friction that creates the spark to
+            generate emotion. Without filter, we say what needs to be said, we do what needs to be done.
           </p>
 
           <div className='space-y-3 text-xs uppercase tracking-[0.3em] text-white/70'>

@@ -119,7 +119,7 @@ const Agence = () => {
       })
     }
 
-    // Nos projets section animation
+    // Our Projects section animation
     if (projetsRef.current) {
       gsap.from(projetsRef.current.children, {
         opacity: 0,
@@ -134,7 +134,7 @@ const Agence = () => {
       })
     }
 
-    // Notre création section animation
+    // Our Creation section animation
     if (creationRef.current) {
       gsap.from(creationRef.current.children, {
         opacity: 0,
@@ -149,7 +149,7 @@ const Agence = () => {
       })
     }
 
-    // Notre culture section animation
+    // Our Culture section animation
     if (cultureRef.current) {
       gsap.from(cultureRef.current.children, {
         opacity: 0,
@@ -259,7 +259,7 @@ const Agence = () => {
           </div>
           <div ref={textRef} className='lg:pl-[40%] lg:mt-20 mt-4 p-3 lg:p-0'>
             <p className='lg:text-6xl text-xl leading-tight font-[font1]'>
-              Notre curiosité nourrit notre créativité. On reste humbles et on dit non aux gros egos, même le vôtre. Une marque est vivante. Elle a des valeurs, une personnalité, une histoire. Si on oublie ça, on peut faire de bons chiffres à court terme, mais on la tue à long terme. C'est pour ça qu'on s'engage à donner de la perspective, pour bâtir des marques influentes.
+              Our curiosity nourishes our creativity. We stay humble and say no to big egos, even yours. A brand is alive. It has values, a personality, a story. If we forget that, we can make good numbers in the short term, but we kill it in the long term. That's why we commit to giving perspective, to build influential brands.
             </p>
           </div>
         </div>
@@ -279,40 +279,40 @@ const Agence = () => {
 
       {/* Three Column Sections */}
       <div className='lg:px-12 px-5 py-20 lg:py-32 space-y-20 lg:space-y-32'>
-        {/* Nos projets */}
+        {/* Our Projects */}
         <div ref={projetsRef}>
           <h2 className='text-4xl lg:text-6xl font-[font2] uppercase mb-6 lg:mb-8'>
-            Nos projets<span className='font-[font1]'>_</span>
+            Our Projects<span className='font-[font1]'>_</span>
           </h2>
           <p className='text-xl lg:text-3xl font-[font1] leading-relaxed max-w-4xl'>
-            naissent dans l'humilité, grandissent dans la curiosité et vivent grâce à la créativité sous toutes ses formes.
+            are born in humility, grow in curiosity and live through creativity in all its forms.
           </p>
         </div>
 
-        {/* Notre création */}
+        {/* Our Creation */}
         <div ref={creationRef}>
           <h2 className='text-4xl lg:text-6xl font-[font2] uppercase mb-6 lg:mb-8'>
-            Notre création<span className='font-[font1]'>_</span>
+            Our Creation<span className='font-[font1]'>_</span>
           </h2>
           <p className='text-xl lg:text-3xl font-[font1] leading-relaxed max-w-4xl'>
-            bouillonne dans un environnement où le talent a le goût d'exploser. Où on se sent libre d'être la meilleure version de soi-même.
+            bubbles in an environment where talent has the taste to explode. Where we feel free to be the best version of ourselves.
           </p>
         </div>
 
-        {/* Notre culture */}
+        {/* Our Culture */}
         <div ref={cultureRef}>
           <h2 className='text-4xl lg:text-6xl font-[font2] uppercase mb-6 lg:mb-8'>
-            Notre culture<span className='font-[font1]'>_</span>
+            Our Culture<span className='font-[font1]'>_</span>
           </h2>
           <p className='text-xl lg:text-3xl font-[font1] leading-relaxed max-w-4xl'>
-            c'est l'ouverture aux autres. Point. Tout l'équipage participe à bâtir une agence dont on est fiers.
+            it's openness to others. Period. The entire crew participates in building an agency we are proud of.
           </p>
         </div>
       </div>
 
       {/* Team Section */}
       <div ref={teamRef} className='lg:px-12 px-5 py-20 lg:py-32'>
-        <h2 className='text-4xl lg:text-6xl font-[font2] uppercase mb-12 lg:mb-16'>Notre équipe</h2>
+        <h2 className='text-4xl lg:text-6xl font-[font2] uppercase mb-12 lg:mb-16'>Our Team</h2>
         <ul className='space-y-3 lg:space-y-4'>
           {teamMembers.map((member, index) => (
             <li key={index} className='text-xl lg:text-3xl font-[font1]'>
@@ -329,7 +329,7 @@ const Agence = () => {
           to="/projects" 
           className='text-2xl lg:text-4xl font-[font1] uppercase hover:text-[#D3FD50] transition-colors inline-block'
         >
-          Voir tous les projets
+          See All Projects
         </Link>
       </div>
     </div>

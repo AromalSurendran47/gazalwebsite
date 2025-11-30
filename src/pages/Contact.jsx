@@ -75,7 +75,7 @@ const Contact = () => {
   return (
     <div className='min-h-screen bg-black text-white font-[font1] overflow-hidden relative'>
       {/* Main Content Container */}
-      <div className='h-screen w-full flex flex-col justify-between px-5 lg:px-12 py-8 lg:py-12'>
+      <div className='min-h-screen w-full flex flex-col justify-between px-5 lg:px-12 py-8 lg:py-12'>
         
         {/* Top Section - Main Headline */}
         <div className='flex-1 flex items-center justify-center relative pt-20 lg:pt-0'>
