@@ -77,7 +77,7 @@ const Home = () => {
                 />
               </svg>
             </span>
-            <Clock className='tracking-[0.35em] text-xs lg:text-sm uppercase' />
+            {/* <Clock className='tracking-[0.35em] text-xs lg:text-sm uppercase' /> */}
           </div>
         </div>
 

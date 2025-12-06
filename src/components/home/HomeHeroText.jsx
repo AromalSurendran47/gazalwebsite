@@ -3,20 +3,16 @@ import Video from './Video'
 
 const HomeHeroText = () => {
     return (
-        <div className='font-[font1] mt-72 lg:mt-0 pt-5 text-center'>
-            <div className='lg:text-[4vw] text-[8vw] justify-center flex items-center uppercase leading-none font-[font2] whitespace-nowrap'>
-            Elevated excellence
-            </div>
-            {/* <div className='lg:text-[9.5vw] text-[12vw] justify-center flex items-start uppercase lg:leading-[8vw] leading-[10vw] font-[font2]'>
-                
-                <div className='h-[7vw] w-[16vw] rounded-full -mt-3 overflow-hidden mx-2'>
-                    <Video />
-                </div>
-                
-            </div> */}
-            <div className='text-[3.5vw] lg:text-[1.2vw] mt-4 lg:mt-6 tracking-wide text-gray-400'>
-                 Update your thought
-            </div>
+        <div className='font-[font1] mt-72 lg:mt-0 pt-5 text-center flex flex-col items-center justify-center'>
+            <p className='font-serif italic text-white/90 text-[5vw] lg:text-[2vw] mb-8 lg:mb-12'>
+                " elevated excellence "
+            </p>
+            <h1 className='lg:text-[4vw] text-[10vw] uppercase leading-none font-[font2] font-bold tracking-tight whitespace-nowrap'>
+                UPDATE YOUR THOUGHTS
+            </h1>
+            <p className='text-[3.5vw] lg:text-[1.2vw] mt-6 lg:mt-8 tracking-wide text-white/70'>
+                where brands find their prime
+            </p>
         </div>
     )
 }

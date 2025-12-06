@@ -14,7 +14,7 @@ const HomeBottomText = () => {
       <div className='relative border-t border-white/30 pt-10 lg:pt-14'>
         <div className='absolute -top-1 left-5 lg:left-12 h-2 w-16 bg-[#D3FD50]' />
         <div className='grid gap-10 lg:grid-cols-[1.1fr_0.9fr_1fr] items-start'>
-          <p className='text-base lg:text-xl leading-loose lg:leading-loose text-white/80 max-w-xl py-4 lg:py-6'>
+          <p className='text-sm lg:text-lg leading-loose lg:leading-loose text-white/80 max-w-xl py-4 lg:py-6'>
           We are a multimedia production house built on the fusion of strategic intelligence and cinematic craftsmanship. We carry stories powerful enough to shape perception,
            inspire emotion, and elevate influence, but only if it's told with intention.
           </p>
