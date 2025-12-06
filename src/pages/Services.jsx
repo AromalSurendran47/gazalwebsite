@@ -222,10 +222,10 @@ const Services = () => {
         <div className='max-w-7xl mx-auto'>
           <div className='grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12'>
             {[
-              { number: '500+', label: 'Projects Delivered' },
-              { number: '200+', label: 'Happy Clients' },
+              { number: '200+', label: 'Projects Delivered' },
+              { number: '30+', label: 'Happy Clients' },
               { number: '98%', label: 'Client Satisfaction' },
-              { number: '10+', label: 'Years Experience' }
+              { number: '5+', label: 'Years Experience' }
             ].map((stat, index) => (
               <div key={index} className='text-center'>
                 <div className='font-[font2] text-5xl lg:text-7xl text-[#D3FD50] mb-4'>
