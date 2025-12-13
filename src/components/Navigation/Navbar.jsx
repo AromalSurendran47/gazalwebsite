@@ -1,17 +1,26 @@
 import React, { useContext, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { NavbarColorContext, NavbarContext } from '../../context/NavContext'
 import logoMain from '../../assets/logo.PNG?url'
 
 const Navbar = () => {
 
+    const navigate = useNavigate()
     const navGreenRef = useRef(null)
     const [navOpen,setNavOpen] = useContext(NavbarContext)
     const [navColor, setNavColor] = useContext(NavbarColorContext)
 
+    const handleLogoClick = () => {
+        navigate('/')
+    }
+
     return (
         <div className='z-40 flex fixed top-0 left-0 w-full items-start justify-between'>
             <div className='lg:p-5 p-2 '>
-                <div className='lg:w-36 w-24 flex items-start'>
+                <div 
+                    onClick={handleLogoClick}
+                    className='lg:w-36 w-24 flex items-start cursor-pointer'
+                >
                     <img src={logoMain} alt="Logo" className="lg:w-36 lg:h-auto w-24 h-auto object-contain block lg:-mt-2 -mt-1" />
                 </div>
             </div>
