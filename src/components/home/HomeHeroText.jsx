@@ -14,6 +14,8 @@ const HomeHeroText = () => {
                 where brands find their prime
             </p>
         </div>
+
+        
     )
 }
 
