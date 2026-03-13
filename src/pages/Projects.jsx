@@ -9,30 +9,30 @@ const Projects = () => {
 
   const projects = [
     {
-      video1: '/projects/AUTOMOTIVE.mp4',
-      video2: '/projects/moto 2.mp4',
+      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339105/AUTOMOTIVE_dj5f0c.mp4',
+      video2: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773404608/drift_htdsre.mp4',
       projectId: 1,
       title1: 'Automotive',
       title2: 'DX Drift '
     }, 
         {
-      video1: '/projects/food reel post.mp4',
-      video2: '/projects/food 2.mp4',
+      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336858/food_reel_post_wkwjpq.mp4',
+      video2: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336854/food_2_hk3prw.mp4',
       projectId: 3,
       title1: 'Food Reel ',
       title2: 'Resturant '
     },
         {
-      video1: '/projects/potraits.mp4',
-      video2: '/projects/poratait 1.mp4',
+      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336855/potraits_r2mmme.mp4',
+      video2: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336870/poratait_1_kladwx.mp4',
       projectId: 4,
       title1: 'Portraits',
       title2: 'Amber juice'
     },
     
     {
-      video1: '/projects/INTERIOR E REEL.mp4',
-      video2: '/projects/gym 1.mp4',
+      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336859/INTERIOR_E_REEL_evdhc9.mp4',
+      video2: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773337084/gym_1_iuq9un.mp4',
       projectId: 2,
       title1: 'Interior',
       title2: 'Gym'
