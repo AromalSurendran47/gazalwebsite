@@ -27,7 +27,7 @@ const ProjectCard = (props) => {
     return (
         <>
             <div 
-                className={`${props.video2 ? 'lg:w-1/2' : 'lg:w-full'} relative overflow-hidden h-full cursor-pointer bg-black rounded-2xl shadow-2xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(211,253,80,0.3)] hover:shadow-[0_0_60px_rgba(211,253,80,0.2)]`}
+                className={`${props.video2 ? 'lg:w-1/2' : 'lg:w-full'} relative overflow-hidden h-full cursor-pointer bg-black rounded-xl sm:rounded-2xl shadow-2xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(211,253,80,0.3)] hover:shadow-[0_0_60px_rgba(211,253,80,0.2)]`}
                 onClick={handleClick}
                 onMouseEnter={() => handleMouseEnter(videoRef1)}
                 onMouseLeave={() => handleMouseLeave(videoRef1)}
@@ -44,15 +44,15 @@ const ProjectCard = (props) => {
                 </video>
                 
                 {/* Ambient Light Effect */}
-                <div className='absolute inset-0 rounded-2xl bg-gradient-to-t from-[#D3FD50]/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 pointer-events-none'></div>
+                <div className='absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-t from-[#D3FD50]/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 pointer-events-none'></div>
                 
                 {/* Title and Description Overlay */}
-                <div className='absolute inset-0 flex flex-col justify-end p-6 lg:p-8 text-white opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none'>
+                <div className='absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-8 text-white opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none'>
                     <div className='transform translate-y-4 hover:translate-y-0 transition-transform duration-300'>
-                        <h3 className='font-[font2] text-2xl lg:text-3xl xl:text-4xl uppercase tracking-tight mb-2'>
+                        <h3 className='font-[font2] text-xl sm:text-2xl lg:text-3xl xl:text-4xl uppercase tracking-tight mb-2'>
                             {props.title1 || 'Project'}
                         </h3>
-                        <p className='text-sm text-white/70 uppercase tracking-wider'>
+                        <p className='text-xs sm:text-sm text-white/70 uppercase tracking-wider'>
                             {props.description1 || 'Click to view project'}
                         </p>
                     </div>
@@ -68,7 +68,7 @@ const ProjectCard = (props) => {
             
             {props.video2 && (
             <div 
-                className='lg:w-1/2 relative overflow-hidden h-full cursor-pointer bg-black rounded-2xl shadow-2xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(211,253,80,0.3)] hover:shadow-[0_0_60px_rgba(211,253,80,0.2)]'
+                className='lg:w-1/2 relative overflow-hidden h-full cursor-pointer bg-black rounded-xl sm:rounded-2xl shadow-2xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(211,253,80,0.3)] hover:shadow-[0_0_60px_rgba(211,253,80,0.2)]'
                 onClick={handleClick}
                 onMouseEnter={() => handleMouseEnter(videoRef2)}
                 onMouseLeave={() => handleMouseLeave(videoRef2)}
@@ -85,15 +85,15 @@ const ProjectCard = (props) => {
                 </video>
                 
                 {/* Ambient Light Effect */}
-                <div className='absolute inset-0 rounded-2xl bg-gradient-to-t from-[#D3FD50]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none'></div>
+                <div className='absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-t from-[#D3FD50]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none'></div>
                 
                 {/* Title and Description Overlay */}
-                <div className='absolute inset-0 flex flex-col justify-end p-6 lg:p-8 text-white opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none'>
+                <div className='absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-8 text-white opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none'>
                     <div className='transform translate-y-4 hover:translate-y-0 transition-transform duration-300'>
-                        <h3 className='font-[font2] text-2xl lg:text-3xl xl:text-4xl uppercase tracking-tight mb-2'>
+                        <h3 className='font-[font2] text-xl sm:text-2xl lg:text-3xl xl:text-4xl uppercase tracking-tight mb-2'>
                             {props.title2 || 'Project'}
                         </h3>
-                        <p className='text-sm text-white/70 uppercase tracking-wider'>
+                        <p className='text-xs sm:text-sm text-white/70 uppercase tracking-wider'>
                             {props.description2 || 'Click to view project'}
                         </p>
                     </div>
