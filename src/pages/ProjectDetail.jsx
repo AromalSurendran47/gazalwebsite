@@ -243,14 +243,14 @@ const ProjectDetail = () => {
       id: 18,
 
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773404787/Copy_of_HD_stunt_video_1_hf7gnv.mp4',
-      category: 'Drift',
+      category: 'Stunt Event (UAE)',
       description: 'High-octane automotive cinematography'
     },
     {
       id: 19,
       // title: 'Arcam Event Video',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773405121/arcam_event_video_final_out_1_lsarv1.mp4',
-      category: 'Drift',
+      category: 'Stunt Event (UAE)',
       description: 'High-octane automotive cinematography'
     },
     {
@@ -306,21 +306,21 @@ const ProjectDetail = () => {
       id: 6,
       title: 'Amber Juice',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336870/poratait_1_kladwx.mp4',
-      category: 'Portrait',
+      category: 'Perfume',
       description: 'Capturing human essence'
     },
     {
       id: 13,
       title: 'Leather Black',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339984/IMG_4059_qonbsl.mp4',
-      category: 'Portrait',
+      category: 'Perfume',
       description: 'Professional portrait photography'
     },
     {
       id: 14,
       title: 'After Dark',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339994/IMG_4222_kqvdsb.mp4',
-      category: 'Portrait',
+      category: 'Perfume',
       description: 'Professional portrait photography'
     }
     // {
@@ -356,13 +356,15 @@ const ProjectDetail = () => {
 
   // Filter projects based on URL parameter
   const filteredProjects = id === '1' 
-    ? projects.filter(project => project.id === 1 || project.id === 2 || project.id === 18 || project.id === 19)
+    ? projects.filter(project => project.id === 1) // Show only automotive video for projectId 1
     : id === '2'
     ? projects.filter(project => project.id === 5 || project.id === 10 || project.id === 11 || project.id === 12) // Show interior and gym videos for projectId 2
     : id === '3'
     ? projects.filter(project => project.id === 7 || project.id === 8 || project.id === 15 || project.id === 16 || project.id === 17) // Show food reel videos for projectId 3
     : id === '4'
     ? projects.filter(project => project.id === 6 || project.id === 13 || project.id === 14) // Show portrait videos for projectId 4
+    : id === '5'
+    ? projects.filter(project => project.id === 2 || project.id === 18 || project.id === 19) // Show drift videos for projectId 5
     : projects.filter(project => project.id === parseInt(id))
 
   gsap.registerPlugin(ScrollTrigger)

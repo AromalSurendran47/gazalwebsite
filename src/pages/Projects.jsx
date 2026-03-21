@@ -10,37 +10,49 @@ const Projects = () => {
   const projects = [
     {
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339105/AUTOMOTIVE_dj5f0c.mp4',
-      video2: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773404608/drift_htdsre.mp4',
+      video2: '',
       projectId: 1,
       title1: 'Automotive',
-      title2: 'DX Drift '
+      description1: 'High-octane automotive cinematography',
+      title2: '',
+      description2: ''
     }, 
-        {
-      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336858/food_reel_post_wkwjpq.mp4',
-      video2: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336854/food_2_hk3prw.mp4',
-      projectId: 3,
-      title1: 'Food Reel ',
-      title2: 'Resturant '
-    },
-        {
-      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336855/potraits_r2mmme.mp4',
-      video2: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336870/poratait_1_kladwx.mp4',
-      projectId: 4,
-      title1: 'Portraits',
-      title2: 'Amber juice'
-    },
-    
     {
-      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336859/INTERIOR_E_REEL_evdhc9.mp4',
-      video2: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773337084/gym_1_iuq9un.mp4',
+      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336858/food_reel_post_wkwjpq.mp4',
+      video2: '',
+      projectId: 3,
+      title1: 'Food Reel',
+      description1: 'Culinary visual storytelling',
+      title2: '',
+      description2: ''
+    },
+    {
+      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336855/potraits_r2mmme.mp4',
+      video2: '',
+      projectId: 4,
+      title1: 'Perfume',
+      description1: 'Capturing human essence',
+      title2: '',
+      description2: ''
+    },
+    {
+      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773337084/gym_1_iuq9un.mp4',
+      video2: '',
       projectId: 2,
-      title1: 'Interior',
-      title2: 'Gym'
+      title1: 'Gym Hawk Zone',
+      description1: 'Fitness journey showcase',
+      title2: '',
+      description2: ''
+    },
+    {
+      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773404608/drift_htdsre.mp4',
+      video2: '',
+      projectId: 5,
+      title1: 'Drift',
+      description1: 'Adrenaline-fueled drifting action',
+      title2: '',
+      description2: ''
     }
-    
-
-    
-
   ]
 
   const titleRef = useRef(null)
@@ -130,11 +142,11 @@ const Projects = () => {
 
       {/* Projects Grid */}
       <div ref={containerRef} className='px-5 lg:px-12 pb-32'>
-        <div className='max-w-[1800px] mx-auto space-y-6 lg:space-y-8'>
+        <div className='max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8'>
           {projects.map((project, idx) => (
             <div 
               key={idx} 
-              className='project-row w-full lg:h-[85vh] h-auto flex lg:flex-row flex-col gap-4 lg:gap-6'
+              className='h-[400px] lg:h-[500px]'
             >
               <ProjectCard 
                 video1={project.video1} 
@@ -142,6 +154,8 @@ const Projects = () => {
                 projectId={project.projectId}
                 title1={project.title1}
                 title2={project.title2}
+                description1={project.description1}
+                description2={project.description2}
               />
             </div>
           ))}
