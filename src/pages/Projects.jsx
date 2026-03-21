@@ -122,7 +122,7 @@ const Projects = () => {
   return (
     <div className='min-h-screen bg-black text-white font-[font1] overflow-hidden'>
       {/* Hero Section */}
-      <div className='relative pt-20 sm:pt-24 md:pt-28 lg:pt-40 pb-12 sm:pb-16 lg:pb-24 px-4 sm:px-5 md:px-8 lg:px-12'>
+      <div className='relative pt-16 sm:pt-20 md:pt-24 lg:pt-32 xl:pt-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-24 px-3 sm:px-5 md:px-8 lg:px-12'>
         {/* Back Button */}
         {/* <button
           onClick={() => navigate('/')}
@@ -144,14 +144,14 @@ const Projects = () => {
         <div className='max-w-[1800px] mx-auto'>
           {/* Main Title */}
           <div ref={titleRef} className='mb-6'>
-            <h1 className='font-[font2] text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-[12vw] uppercase leading-[0.9] tracking-tight text-white px-2'>
+            <h1 className='font-[font2] text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[10vw] uppercase leading-[0.9] tracking-tight text-white px-2'>
               Projects
             </h1>
           </div>
           
           {/* Subtitle */}
           <div ref={subtitleRef} className='mt-4'>
-            <p className='text-base sm:text-lg lg:text-xl text-white/60 uppercase tracking-wider font-[font1] px-2'>
+            <p className='text-sm xs:text-base sm:text-lg lg:text-xl xl:text-2xl text-white/60 uppercase tracking-wider font-[font1] px-2'>
               Creative Visual Stories
             </p>
             <div className='mt-6 w-20 h-[2px] bg-white'></div>
@@ -160,12 +160,12 @@ const Projects = () => {
       </div>
 
       {/* Projects Grid */}
-      <div ref={containerRef} className='px-4 sm:px-5 md:px-8 lg:px-12 pb-20 sm:pb-24 lg:pb-32'>
-        <div className='max-w-[1800px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8'>
+      <div ref={containerRef} className='px-3 sm:px-5 md:px-8 lg:px-12 pb-16 sm:pb-20 lg:pb-32'>
+        <div className='max-w-[1800px] mx-auto grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8'>
           {projects.map((project, idx) => (
             <div 
               key={idx} 
-              className='h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px]'
+              className='h-[250px] xs:h-[280px] sm:h-[320px] md:h-[380px] lg:h-[450px] xl:h-[500px] w-full'
             >
               <ProjectCard 
                 video1={project.video1} 
@@ -182,11 +182,14 @@ const Projects = () => {
       </div>
 
       {/* Footer Section */}
-      <div className='px-4 sm:px-5 md:px-8 lg:px-12 pb-12 sm:pb-16 pt-16 sm:pt-20'>
+      <div className='px-3 sm:px-5 md:px-8 lg:px-12 pb-8 sm:pb-12 lg:pb-16 pt-12 sm:pt-16 lg:pt-20'>
         <div className='max-w-[1800px] mx-auto text-center'>
-          <p className='text-xs sm:text-sm lg:text-base text-white/40 uppercase tracking-widest px-2'>
+          <p className='text-xs xs:text-sm sm:text-base lg:text-lg text-white/40 uppercase tracking-widest px-2'>
             Scroll to explore more
           </p>
+          <div className='mt-4 flex justify-center'>
+            <div className='w-16 sm:w-20 h-0.5 sm:h-1 bg-white/60'></div>
+          </div>
         </div>
       </div>
     </div>
