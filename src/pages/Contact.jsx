@@ -8,6 +8,8 @@ const Contact = () => {
   const formCardRef = useRef(null)
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [activeField, setActiveField] = useState(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSent, setIsSent] = useState(false)
 
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
@@ -59,9 +61,43 @@ const Contact = () => {
     })
   })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
+    setIsSubmitting(true)
+    
+    try {
+      // Send email using EmailJS or similar service
+      const response = await fetch('https://formspree.io/f/maqpzjqz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `New Contact Form Message from ${formData.name}`,
+        }),
+      })
+      
+      if (response.ok) {
+        console.log('Form submitted successfully:', formData)
+        setIsSent(true)
+        
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setFormData({ name: '', email: '', message: '' })
+          setIsSent(false)
+        }, 3000)
+      } else {
+        throw new Error('Failed to send message')
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+      alert('Failed to send message. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -126,7 +162,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className='text-white/40 text-xs uppercase tracking-wider'>Phone</p>
-                  <p className='text-white group-hover:text-[#D3FD50] transition-colors'>+971 50 359 6171</p>
+                  <p className='text-white group-hover:text-[#D3FD50] transition-colors'>+971507304941</p>
                 </div>
               </a>
 
@@ -212,12 +248,37 @@ const Contact = () => {
                 {/* Submit */}
                 <button
                   type='submit'
-                  className='form-element w-full py-4 bg-gradient-to-r from-[#D3FD50] to-[#9EF01A] text-black font-[font2] uppercase tracking-wider text-sm rounded-xl hover:shadow-lg hover:shadow-[#D3FD50]/25 transition-all duration-300 group flex items-center justify-center gap-2'
+                  disabled={isSubmitting || isSent}
+                  className={`w-full py-4 font-[font2] uppercase tracking-wider text-sm rounded-xl transition-all duration-300 group flex items-center justify-center gap-2 ${
+                    isSent 
+                      ? 'bg-green-500 text-white cursor-default' 
+                      : isSubmitting
+                      ? 'bg-gray-500 text-white cursor-not-allowed'
+                      : 'bg-gradient-to-r from-[#D3FD50] to-[#9EF01A] text-black hover:shadow-lg hover:shadow-[#D3FD50]/25'
+                  }`}
                 >
-                  Send Message
-                  <svg className='w-4 h-4 group-hover:translate-x-1 transition-transform' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M14 5l7 7m0 0l-7 7m7-7H3' />
-                  </svg>
+                  {isSent ? (
+                    <>
+                      <svg className='w-4 h-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M5 13l4 4L19 7' />
+                      </svg>
+                      Message Sent!
+                    </>
+                  ) : isSubmitting ? (
+                    <>
+                      <svg className='w-4 h-4 animate-spin' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 2v4m0 12v4M4.93 4.93l2.83 2.83m11.32 11.32l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m11.32-11.32l2.83-2.83' />
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <svg className='w-4 h-4 group-hover:translate-x-1 transition-transform' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M14 5l7 7m0 0l-7 7m7-7H3' />
+                      </svg>
+                    </>
+                  )}
                 </button>
               </form>
 
