@@ -21,7 +21,7 @@ const Navbar = () => {
                     onClick={handleLogoClick}
                     className='lg:w-36 w-24 flex items-start cursor-pointer'
                 >
-                    <img src={logoMain} alt="Logo" className="lg:w-36 lg:h-auto w-24 h-auto object-contain block lg:-mt-2 -mt-1" />
+                    <img src={logoMain} alt="Logo" className="lg:w-36 lg:h-auto w-15 h-auto object-contain block lg:-mt-8 -mt-2" />
                 </div>
             </div>
             <div onClick={()=>{
@@ -33,7 +33,7 @@ const Navbar = () => {
                     navGreenRef.current.style.height = '0%'
                 }}
                 className='lg:h-16 h-10 bg-black relative lg:w-[16vw] w-48'>
-                <div ref={navGreenRef} className='bg-[#D3FD50] transition-all absolute top-0 h-0 w-full'></div>
+                <div ref={navGreenRef} className='bg-[#D3FD50] transition-all duration-150 absolute top-0 h-0 w-full'></div>
                 <div className='relative h-full lg:px-12 px-8 flex flex-col justify-center items-end lg:gap-1.5 gap-0.5'>
                     <div className="lg:w-18 w-12 h-0.5 bg-white"></div>
                     <div className="lg:w-10 w-6 h-0.5 bg-white"></div>

@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import Video from '../components/home/Video'
 import HomeHeroText from '../components/home/HomeHeroText'
 import HomeBottomText from '../components/home/HomeBottomText'
-import Clock from '../components/home/Clock'
+// import Clock from '../components/home/Clock'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
@@ -58,11 +58,11 @@ const Home = () => {
       <div className='relative z-10 flex flex-col min-h-screen'>
         <div
           ref={infoBarRef}
-          className='flex justify-end px-5 lg:px-12 pt-6 pb-4 text-white/80 backdrop-blur-sm'
+          className='flex justify-end px-4 sm:px-5 md:px-8 lg:px-12 pt-4 sm:pt-6 pb-2 sm:pb-4 text-white/80'
         >
           <div className='flex items-center gap-3 uppercase tracking-[0.3em] text-[0.6rem] sm:text-xs'>
-            <span className='flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-white/60'>
-              <svg
+            <span className='flex h-8 w-8 sm:h-10 sm:w-10 items-center '>
+              {/* <svg
                 className='h-4 w-4 sm:h-5 sm:w-5 text-white'
                 viewBox='0 0 24 24'
                 fill='none'
@@ -75,13 +75,13 @@ const Home = () => {
                   strokeWidth='1.2'
                   strokeLinecap='round'
                 />
-              </svg>
+              </svg> */}
             </span>
             {/* <Clock className='tracking-[0.35em] text-xs lg:text-sm uppercase' /> */}
           </div>
         </div>
 
-        <div className='flex-1 flex items-center justify-center px-5 lg:px-16'>
+        <div className='flex-1 flex items-center justify-center px-4 sm:px-5 md:px-8 lg:px-16'>
           <div ref={heroTextRef} className='w-full text-center'>
             <HomeHeroText />
           </div>

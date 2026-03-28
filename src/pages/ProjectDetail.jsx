@@ -228,52 +228,106 @@ const ProjectDetail = () => {
     {
       id: 1,
       // title: 'Automotive Gallery',
-      video: '/projects/moto 1.mp4',
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773405539/MV_AUGUSTA_REEL_pr6rth.mp4',
       category: 'Automotive',
-      description: 'High-octane automotive cinematography'
+      description: 'MV AGUSTA F3'
+    },
+    {
+      id: 20,
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774718693/bike_zpaert.mp4',
+      category: 'Automotive',
+      description: 'MV AGUSTA F3'
     },
     {
       id: 2,
       // title: 'Automotive Gallery',
-      video: '/projects/moto 2.mp4',
-      category: 'Drift',
-      description: 'High-octane automotive cinematography'
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773404608/drift_htdsre.mp4',
+      category: 'DX.Drift',
+      description: 'Motorsports event shoot | DX Drift UAE'
     },
-    
+    {
+      id: 18,
+
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773404787/Copy_of_HD_stunt_video_1_hf7gnv.mp4',
+      category: 'HD Stunt',
+      description: 'Motorbike Stunt Shoot'
+    },
+    {
+      id: 19,
+      // title: 'Arcam Event Video',
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773405121/arcam_event_video_final_out_1_lsarv1.mp4',
+      category: 'Club style Dubai',
+      description: 'Live Stunt Event Capture | HD Stund'
+    },
     {
       id: 4,
       title: 'Food Reel',
-      video: '/projects/food reel post.mp4',
-      category: 'Culinary',
-      description: 'Gourmet visual storytelling'
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336858/food_reel_post_wkwjpq.mp4',
+      category: ' Food videography',
+      description: 'Hilton  garden inn,Trivandrum'
     },
     {
       id: 7,
       // title: 'Food Reel 1',
-      video: '/projects/food 1.mp4',
-      category: 'Culinary',
-      description: 'Gourmet visual storytelling'
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336853/food_1_jnd01r.mp4',
+      category: ' Food videography',
+      description: 'Hilton  garden inn,Trivandrum'
     },
     {
       id: 8,
       // title: 'Food Reel 2',
-      video: '/projects/food 2.mp4',
-      category: 'Culinary',
-      description: 'Gourmet visual storytelling'
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336854/food_2_hk3prw.mp4',
+      category: ' Food videography',
+      description: 'Saj,Luciya,Trivandrum'
+    },
+    {
+      id: 15,
+
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773340953/hilton_chef_azad_x8hno0.mp4',
+      category: ' Food videography',
+      description: 'Hilton  garden inn,Trivandrum'
+    },
+    {
+      id: 16,
+   
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773340950/HILTON_3_ir2srf.mp4',
+      category: ' Food videography',
+      description: 'Hilton  garden inn,Trivandrum'
+    },
+    {
+      id: 17,
+  
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773340945/hilton3_gqh4on.mp4',
+      category: ' Food videography',
+      description: 'Hilton  garden inn,Trivandrum'
     },
     // {
     //   id: 5,
     //   title: 'Interior',
-    //   video: '/projects/INTERIOR E REEL.mp4',
+    //   video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336859/INTERIOR_E_REEL_evdhc9.mp4',
     //   category: 'Architecture',
     //   description: 'Elegant space design showcase'
     // },
     {
       id: 6,
-      title: 'Portraits',
-      video: '/projects/poratait 1.mp4',
-      category: 'Portrait',
-      description: 'Capturing human essence'
+      title: 'Amber Juice',
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336870/poratait_1_kladwx.mp4',
+      category: 'Perfume',
+      description: 'Perfume Branding Shoot'
+    },
+    {
+      id: 13,
+      title: 'Leather Black',
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339984/IMG_4059_qonbsl.mp4',
+      category: 'Perfume',
+      description: 'Perfume Branding Shoot'
+    },
+    {
+      id: 14,
+      title: 'After Dark',
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339994/IMG_4222_kqvdsb.mp4',
+      category: 'Perfume',
+      description: 'Perfume Branding Shoot'
     }
     // {
     //   id: 9,
@@ -286,35 +340,37 @@ const ProjectDetail = () => {
     {
       id: 10,
       title: 'Gym Hawk Zone',
-      video: '/projects/gym 1.mp4',
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773337084/gym_1_iuq9un.mp4',
       category: 'Fitness',
-      description: 'Fitness journey showcase'
+      description: ' Fitness videography'
     },
     {
       id: 11,
       title: 'Gym Hawk Zone',
-      video: '/projects/gym 2.mp4',
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336746/gym_2_jcu0dk.mp4',
       category: 'Fitness',
-      description: 'Fitness journey showcase'
+      description: ' Fitness videography'
     },
-    {
-      id: 12,
-      title: 'Gym Hawk Zone',
-      video: '/projects/gym 3.mp4',
-      category: 'Fitness',
-      description: 'Fitness journey showcase'
-    }
+    // {
+    //   id: 12,
+    //   title: 'Gym Hawk Zone',
+    //   video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773337084/gym_3_xlbb0g.mp4',
+    //   category: 'Fitness',
+    //   description: ' Fitness videography'
+    // }
   ]
 
   // Filter projects based on URL parameter
   const filteredProjects = id === '1' 
-    ? projects.filter(project => project.id === 1 || project.id === 2)
+    ? projects.filter(project => project.id === 1 || project.id === 20) // Show automotive videos for projectId 1
     : id === '2'
     ? projects.filter(project => project.id === 5 || project.id === 10 || project.id === 11 || project.id === 12) // Show interior and gym videos for projectId 2
     : id === '3'
-    ? projects.filter(project => project.id === 7 || project.id === 8) // Show food reel videos for projectId 3
+    ? projects.filter(project => project.id === 7 || project.id === 8 || project.id === 15 || project.id === 16 || project.id === 17) // Show food reel videos for projectId 3
     : id === '4'
-    ? projects.filter(project => project.id === 6 || project.id === 9) // Show portrait videos for projectId 4
+    ? projects.filter(project => project.id === 6 || project.id === 13 || project.id === 14) // Show portrait videos for projectId 4
+    : id === '5'
+    ? projects.filter(project => project.id === 2 || project.id === 18 || project.id === 19) // Show drift videos for projectId 5
     : projects.filter(project => project.id === parseInt(id))
 
   gsap.registerPlugin(ScrollTrigger)
