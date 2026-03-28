@@ -37,7 +37,7 @@ const Projects = () => {
       description2: ''
     },
     {
-      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773337084/gym_1_iuq9un.mp4',
+      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774721957/fitness_display_eh17dl.mp4',
       video2: '',
       projectId: 2,
       title1: 'Gym Hawk Zone',

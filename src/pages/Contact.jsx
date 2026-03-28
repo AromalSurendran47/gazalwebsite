@@ -150,73 +150,73 @@ const Contact = () => {
 
       <div ref={contentRef} className='relative z-10 min-h-screen flex flex-col lg:flex-row'>
         {/* Left Side - Info */}
-        <div className='w-full lg:w-1/2 px-6 md:px-12 lg:px-16 py-28 lg:py-0 flex flex-col justify-center'>
-          <div className='max-w-xl'>
+        <div className='w-full lg:w-1/2 px-4 sm:px-6 md:px-8 lg:px-16 py-16 sm:py-20 lg:py-0 flex flex-col justify-center lg:justify-center min-h-[50vh] lg:min-h-screen'>
+          <div className='max-w-xl mx-auto lg:mx-0'>
             <div className='overflow-hidden mb-4'>
-              <p className='hero-text text-[#D3FD50] text-sm uppercase tracking-[0.3em] font-medium'>Contact</p>
+              <p className='hero-text text-[#D3FD50] text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] font-medium'>Contact</p>
             </div>
             
             <div className='overflow-hidden mb-2'>
-              <h1 className='hero-text font-[font2] text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]'>
+              <h1 className='hero-text font-[font2] text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl leading-[0.9] sm:leading-[0.95]'>
                 Let's work
               </h1>
             </div>
-            <div className='overflow-hidden mb-8'>
-              <h1 className='hero-text font-[font2] text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]'>
+            <div className='overflow-hidden mb-6 sm:mb-8'>
+              <h1 className='hero-text font-[font2] text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl leading-[0.9] sm:leading-[0.95]'>
                 <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#D3FD50] to-[#9EF01A]'>together</span>
               </h1>
             </div>
 
-            <div className='overflow-hidden mb-12'>
-              <p className='hero-text text-white/50 text-lg max-w-md leading-relaxed'>
+            <div className='overflow-hidden mb-8 sm:mb-12'>
+              <p className='hero-text text-white/50 text-sm sm:text-base lg:text-lg max-w-md mx-auto lg:mx-0 leading-relaxed'>
                 Have a project in mind? Let's create something extraordinary together.
               </p>
             </div>
 
             {/* Contact Info */}
-            <div className='space-y-6'>
-              <a href='mailto:metisprimeproduction@gmail.com' className='info-item group flex items-center gap-4'>
-                <div className='w-14 h-14 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:bg-[#D3FD50]/10 group-hover:border-[#D3FD50]/30 transition-all duration-300'>
-                  <svg className='w-6 h-6 text-[#D3FD50]' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+            <div className='space-y-4 sm:space-y-6'>
+              <a href='mailto:metisprimeproduction@gmail.com' className='info-item group flex items-center gap-3 sm:gap-4'>
+                <div className='w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:bg-[#D3FD50]/10 group-hover:border-[#D3FD50]/30 transition-all duration-300'>
+                  <svg className='w-5 h-5 sm:w-6 sm:h-6 text-[#D3FD50]' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' />
                   </svg>
                 </div>
-                <div>
-                  <p className='text-white/40 text-xs uppercase tracking-wider'>Email</p>
-                  <p className='text-white group-hover:text-[#D3FD50] transition-colors text-sm md:text-base'>metisprimeproduction@gmail.com</p>
+                <div className='flex-1 min-w-0'>
+                  <p className='text-white/40 text-xs uppercase tracking-wider mb-1'>Email</p>
+                  <p className='text-white group-hover:text-[#D3FD50] transition-colors text-sm sm:text-base break-words'>metisprimeproduction@gmail.com</p>
                 </div>
               </a>
 
-              <a href='tel:+971503596171' className='info-item group flex items-center gap-4'>
-                <div className='w-14 h-14 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:bg-[#D3FD50]/10 group-hover:border-[#D3FD50]/30 transition-all duration-300'>
-                  <svg className='w-6 h-6 text-[#D3FD50]' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+              <a href='tel:+971503596171' className='info-item group flex items-center gap-3 sm:gap-4'>
+                <div className='w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:bg-[#D3FD50]/10 group-hover:border-[#D3FD50]/30 transition-all duration-300'>
+                  <svg className='w-5 h-5 sm:w-6 sm:h-6 text-[#D3FD50]' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z' />
                   </svg>
                 </div>
-                <div>
-                  <p className='text-white/40 text-xs uppercase tracking-wider'>Phone</p>
-                  <p className='text-white group-hover:text-[#D3FD50] transition-colors'>+971507304941</p>
+                <div className='flex-1 min-w-0'>
+                  <p className='text-white/40 text-xs uppercase tracking-wider mb-1'>Phone</p>
+                  <p className='text-white group-hover:text-[#D3FD50] transition-colors text-sm sm:text-base'>+971507304941</p>
                 </div>
               </a>
 
-              <div className='info-item flex items-center gap-4'>
-                <div className='w-14 h-14 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center'>
-                  <svg className='w-6 h-6 text-[#D3FD50]' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+              <div className='info-item flex items-center gap-3 sm:gap-4'>
+                <div className='w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center'>
+                  <svg className='w-5 h-5 sm:w-6 sm:h-6 text-[#D3FD50]' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z' />
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M15 11a3 3 0 11-6 0 3 3 0 016 0z' />
                   </svg>
                 </div>
-                <div>
-                  <p className='text-white/40 text-xs uppercase tracking-wider'>Location</p>
-                  <p className='text-white'>Sharjah,UAE</p>
+                <div className='flex-1 min-w-0'>
+                  <p className='text-white/40 text-xs uppercase tracking-wider mb-1'>Location</p>
+                  <p className='text-white text-sm sm:text-base'>Sharjah, UAE</p>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className='info-item flex gap-3 mt-10'>
+            <div className='info-item flex gap-2 sm:gap-3 mt-6 sm:mt-8'>
               {['IG', 'FB', 'IN', 'BE'].map((s) => (
-                <a key={s} href='#' className='w-11 h-11 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-sm font-[font2] hover:bg-[#D3FD50] hover:text-black hover:border-[#D3FD50] transition-all duration-300'>
+                <a key={s} href='#' className='w-10 h-10 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-xs sm:text-sm font-[font2] hover:bg-[#D3FD50] hover:text-black hover:border-[#D3FD50] transition-all duration-300'>
                   {s}
                 </a>
               ))}
@@ -225,20 +225,20 @@ const Contact = () => {
         </div>
 
         {/* Right Side - Form */}
-        <div className='w-full lg:w-1/2 px-6 md:px-12 lg:px-16 py-12 lg:py-0 flex items-center justify-center'>
+        <div className='w-full lg:w-1/2 px-4 sm:px-6 md:px-8 lg:px-16 py-16 sm:py-20 lg:py-0 flex items-center justify-center min-h-[50vh] lg:min-h-screen'>
           <div 
             ref={formCardRef}
-            className='w-full max-w-md bg-white/[0.03] backdrop-blur-xl rounded-3xl border border-white/10 p-8 md:p-10 relative overflow-hidden'
+            className='w-full max-w-sm sm:max-w-md bg-white/[0.03] backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-white/10 p-6 sm:p-8 md:p-10 relative overflow-hidden'
           >
             {/* Card Glow */}
-            <div className='absolute -top-20 -right-20 w-40 h-40 bg-[#D3FD50]/20 rounded-full blur-3xl'></div>
-            <div className='absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl'></div>
+            <div className='absolute -top-16 -right-16 sm:-top-20 sm:-right-20 w-32 h-32 sm:w-40 sm:h-40 bg-[#D3FD50]/20 rounded-full blur-3xl'></div>
+            <div className='absolute -bottom-16 -left-16 sm:-bottom-20 sm:-left-20 w-32 h-32 sm:w-40 sm:h-40 bg-purple-500/10 rounded-full blur-3xl'></div>
 
             <div className='relative z-10'>
-              <h2 className='form-element font-[font2] text-2xl md:text-3xl mb-2'>Send a message</h2>
-              <p className='form-element text-white/40 text-sm mb-8'>We'll respond within 24 hours</p>
+              <h2 className='form-element font-[font2] text-xl sm:text-2xl md:text-3xl mb-2 text-center sm:text-left'>Send a message</h2>
+              <p className='form-element text-white/40 text-xs sm:text-sm mb-6 sm:mb-8 text-center sm:text-left'>We'll respond within 24 hours</p>
 
-              <form onSubmit={handleSubmit} className='space-y-6'>
+              <form onSubmit={handleSubmit} className='space-y-4 sm:space-y-6'>
                 {/* Name */}
                 <div className='form-element relative'>
                   <input
@@ -248,7 +248,7 @@ const Contact = () => {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     onFocus={() => setActiveField('name')}
                     onBlur={() => setActiveField(null)}
-                    className={`w-full bg-white/5 border ${activeField === 'name' ? 'border-[#D3FD50]' : 'border-white/10'} rounded-xl px-5 py-4 text-white placeholder:text-white/30 outline-none transition-all duration-300 focus:bg-white/[0.08]`}
+                    className={`w-full bg-white/5 border ${activeField === 'name' ? 'border-[#D3FD50]' : 'border-white/10'} rounded-lg sm:rounded-xl px-4 sm:px-5 py-3 sm:py-4 text-white placeholder:text-white/30 outline-none transition-all duration-300 focus:bg-white/[0.08] text-sm sm:text-base`}
                   />
                 </div>
 
@@ -261,7 +261,7 @@ const Contact = () => {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     onFocus={() => setActiveField('email')}
                     onBlur={() => setActiveField(null)}
-                    className={`w-full bg-white/5 border ${activeField === 'email' ? 'border-[#D3FD50]' : 'border-white/10'} rounded-xl px-5 py-4 text-white placeholder:text-white/30 outline-none transition-all duration-300 focus:bg-white/[0.08]`}
+                    className={`w-full bg-white/5 border ${activeField === 'email' ? 'border-[#D3FD50]' : 'border-white/10'} rounded-lg sm:rounded-xl px-4 sm:px-5 py-3 sm:py-4 text-white placeholder:text-white/30 outline-none transition-all duration-300 focus:bg-white/[0.08] text-sm sm:text-base`}
                   />
                 </div>
 
@@ -274,7 +274,7 @@ const Contact = () => {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     onFocus={() => setActiveField('message')}
                     onBlur={() => setActiveField(null)}
-                    className={`w-full bg-white/5 border ${activeField === 'message' ? 'border-[#D3FD50]' : 'border-white/10'} rounded-xl px-5 py-4 text-white placeholder:text-white/30 outline-none transition-all duration-300 focus:bg-white/[0.08] resize-none`}
+                    className={`w-full bg-white/5 border ${activeField === 'message' ? 'border-[#D3FD50]' : 'border-white/10'} rounded-lg sm:rounded-xl px-4 sm:px-5 py-3 sm:py-4 text-white placeholder:text-white/30 outline-none transition-all duration-300 focus:bg-white/[0.08] resize-none text-sm sm:text-base`}
                   />
                 </div>
 
@@ -282,7 +282,7 @@ const Contact = () => {
                 <button
                   type='submit'
                   disabled={isSubmitting || isSent}
-                  className={`w-full py-4 font-[font2] uppercase tracking-wider text-sm rounded-xl transition-all duration-300 group flex items-center justify-center gap-2 ${
+                  className={`w-full py-3 sm:py-4 font-[font2] uppercase tracking-wider text-xs sm:text-sm rounded-lg sm:rounded-xl transition-all duration-300 group flex items-center justify-center gap-2 ${
                     isSent 
                       ? 'bg-green-500 text-white cursor-default' 
                       : isSubmitting
@@ -292,22 +292,22 @@ const Contact = () => {
                 >
                   {isSent ? (
                     <>
-                      <svg className='w-4 h-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+                      <svg className='w-3 h-3 sm:w-4 sm:h-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                         <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M5 13l4 4L19 7' />
                       </svg>
-                      Message Sent!
+                      <span className='text-xs sm:text-sm'>Message Sent!</span>
                     </>
                   ) : isSubmitting ? (
                     <>
-                      <svg className='w-4 h-4 animate-spin' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+                      <svg className='w-3 h-3 sm:w-4 sm:h-4 animate-spin' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                         <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 2v4m0 12v4M4.93 4.93l2.83 2.83m11.32 11.32l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m11.32-11.32l2.83-2.83' />
                       </svg>
-                      Sending...
+                      <span className='text-xs sm:text-sm'>Sending...</span>
                     </>
                   ) : (
                     <>
-                      Send Message
-                      <svg className='w-4 h-4 group-hover:translate-x-1 transition-transform' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+                      <span className='text-xs sm:text-sm'>Send Message</span>
+                      <svg className='w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                         <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M14 5l7 7m0 0l-7 7m7-7H3' />
                       </svg>
                     </>
@@ -316,11 +316,12 @@ const Contact = () => {
               </form>
 
               {/* Bottom Text */}
-              <p className='form-element text-center text-white/30 text-xs mt-6 flex items-center justify-center gap-2'>
-                <svg className='w-4 h-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z' />
-                </svg>
-                Your data is secure with us
+              <p className='form-element text-center text-white/30 text-xs mt-4 sm:mt-6 flex items-center justify-center gap-2 flex-wrap'>
+                <span>Dubai UAE</span>
+                <span className='text-[#D3FD50]'>●</span>
+                <span>Creative Production</span>
+                <span className='text-[#D3FD50]'>●</span>
+                <span>Available for projects</span>
               </p>
             </div>
           </div>
