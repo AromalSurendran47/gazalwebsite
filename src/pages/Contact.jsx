@@ -175,7 +175,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className='text-white/40 text-xs uppercase tracking-wider'>Location</p>
-                  <p className='text-white'>Dubai, UAE</p>
+                  <p className='text-white'>Sharjah,UAE</p>
                 </div>
               </div>
             </div>

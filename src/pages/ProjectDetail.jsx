@@ -230,70 +230,70 @@ const ProjectDetail = () => {
       // title: 'Automotive Gallery',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773405539/MV_AUGUSTA_REEL_pr6rth.mp4',
       category: 'Automotive',
-      description: 'High-octane automotive cinematography'
+      description: 'MV AGUSTA F3'
     },
     {
       id: 2,
       // title: 'Automotive Gallery',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773404608/drift_htdsre.mp4',
-      category: 'Drift',
-      description: 'High-octane automotive cinematography'
+      category: 'DX.Drift',
+      description: 'Motorsports event shoot | DX Drift UAE'
     },
     {
       id: 18,
 
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773404787/Copy_of_HD_stunt_video_1_hf7gnv.mp4',
-      category: 'Stunt Event (UAE)',
-      description: 'High-octane automotive cinematography'
+      category: 'HD Stunt',
+      description: 'Motorbike Stunt Shoot'
     },
     {
       id: 19,
       // title: 'Arcam Event Video',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773405121/arcam_event_video_final_out_1_lsarv1.mp4',
-      category: 'Stunt Event (UAE)',
-      description: 'High-octane automotive cinematography'
+      category: 'Club style Dubai',
+      description: 'Live Stunt Event Capture | HD Stund'
     },
     {
       id: 4,
       title: 'Food Reel',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336858/food_reel_post_wkwjpq.mp4',
-      category: 'Culinary',
-      description: 'Gourmet visual storytelling'
+      category: ' Food videography',
+      description: 'Hilton  garden inn,Trivandrum'
     },
     {
       id: 7,
       // title: 'Food Reel 1',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336853/food_1_jnd01r.mp4',
-      category: 'Culinary',
-      description: 'Gourmet visual storytelling'
+      category: ' Food videography',
+      description: 'Hilton  garden inn,Trivandrum'
     },
     {
       id: 8,
       // title: 'Food Reel 2',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336854/food_2_hk3prw.mp4',
-      category: 'Culinary',
-      description: 'Gourmet visual storytelling'
+      category: ' Food videography',
+      description: 'Saj,Luciya,Trivandrum'
     },
     {
       id: 15,
 
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773340953/hilton_chef_azad_x8hno0.mp4',
-      category: 'Culinary',
-      description: 'Professional culinary photography'
+      category: ' Food videography',
+      description: 'Hilton  garden inn,Trivandrum'
     },
     {
       id: 16,
    
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773340950/HILTON_3_ir2srf.mp4',
-      category: 'Culinary',
-      description: 'Professional culinary photography'
+      category: ' Food videography',
+      description: 'Hilton  garden inn,Trivandrum'
     },
     {
       id: 17,
   
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773340945/hilton3_gqh4on.mp4',
-      category: 'Culinary',
-      description: 'Professional culinary photography'
+      category: ' Food videography',
+      description: 'Hilton  garden inn,Trivandrum'
     },
     // {
     //   id: 5,
@@ -307,21 +307,21 @@ const ProjectDetail = () => {
       title: 'Amber Juice',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336870/poratait_1_kladwx.mp4',
       category: 'Perfume',
-      description: 'Capturing human essence'
+      description: 'Perfume Branding Shoot'
     },
     {
       id: 13,
       title: 'Leather Black',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339984/IMG_4059_qonbsl.mp4',
       category: 'Perfume',
-      description: 'Professional portrait photography'
+      description: 'Perfume Branding Shoot'
     },
     {
       id: 14,
       title: 'After Dark',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339994/IMG_4222_kqvdsb.mp4',
       category: 'Perfume',
-      description: 'Professional portrait photography'
+      description: 'Perfume Branding Shoot'
     }
     // {
     //   id: 9,
@@ -336,21 +336,21 @@ const ProjectDetail = () => {
       title: 'Gym Hawk Zone',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773337084/gym_1_iuq9un.mp4',
       category: 'Fitness',
-      description: 'Fitness journey showcase'
+      description: ' Fitness videography'
     },
     {
       id: 11,
       title: 'Gym Hawk Zone',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336746/gym_2_jcu0dk.mp4',
       category: 'Fitness',
-      description: 'Fitness journey showcase'
+      description: ' Fitness videography'
     },
     {
       id: 12,
       title: 'Gym Hawk Zone',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773337084/gym_3_xlbb0g.mp4',
       category: 'Fitness',
-      description: 'Fitness journey showcase'
+      description: ' Fitness videography'
     }
   ]
 
