@@ -148,75 +148,75 @@ const Contact = () => {
         backgroundSize: '30px 30px sm:45px 45px lg:60px 60px'
       }}></div>
 
-      <div ref={contentRef} className='relative z-10 min-h-screen flex flex-col lg:flex-row'>
+      <div ref={contentRef} className='relative z-10 min-h-screen flex flex-col lg:flex-row max-w-[1400px] mx-auto'>
         {/* Left Side - Info */}
-        <div className='w-full lg:w-1/2 px-4 sm:px-6 md:px-8 lg:px-16 py-16 sm:py-20 lg:py-0 flex flex-col justify-center lg:justify-center min-h-[50vh] lg:min-h-screen'>
-          <div className='max-w-xl mx-auto lg:mx-0'>
-            <div className='overflow-hidden mb-4'>
-              <p className='hero-text text-[#D3FD50] text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] font-medium'>Contact</p>
+        <div className='w-full lg:w-1/2 px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-8 sm:py-12 lg:py-0 flex flex-col justify-center lg:justify-center min-h-[50vh] lg:min-h-screen'>
+          <div className='max-w-md mx-auto lg:mx-0'>
+            <div className='overflow-hidden mb-2 sm:mb-3'>
+              <p className='hero-text text-[#D3FD50] text-xs sm:text-sm uppercase tracking-[0.1em] sm:tracking-[0.15em] lg:tracking-[0.2em] font-medium'>Contact</p>
             </div>
             
-            <div className='overflow-hidden mb-2'>
-              <h1 className='hero-text font-[font2] text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl leading-[0.9] sm:leading-[0.95]'>
+            <div className='overflow-hidden mb-1 sm:mb-2'>
+              <h1 className='hero-text font-[font2] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl leading-[0.8] sm:leading-[0.85] lg:leading-[0.9]'>
                 Let's work
               </h1>
             </div>
-            <div className='overflow-hidden mb-6 sm:mb-8'>
-              <h1 className='hero-text font-[font2] text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl leading-[0.9] sm:leading-[0.95]'>
+            <div className='overflow-hidden mb-3 sm:mb-4 lg:mb-6'>
+              <h1 className='hero-text font-[font2] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl leading-[0.8] sm:leading-[0.85] lg:leading-[0.9]'>
                 <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#D3FD50] to-[#9EF01A]'>together</span>
               </h1>
             </div>
 
-            <div className='overflow-hidden mb-8 sm:mb-12'>
-              <p className='hero-text text-white/50 text-sm sm:text-base lg:text-lg max-w-md mx-auto lg:mx-0 leading-relaxed'>
+            <div className='overflow-hidden mb-4 sm:mb-6 lg:mb-8'>
+              <p className='hero-text text-white/50 text-xs sm:text-sm md:text-base lg:text-lg max-w-xs sm:max-w-sm mx-auto lg:mx-0 leading-relaxed'>
                 Have a project in mind? Let's create something extraordinary together.
               </p>
             </div>
 
             {/* Contact Info */}
-            <div className='space-y-4 sm:space-y-6'>
-              <a href='mailto:metisprimeproduction@gmail.com' className='info-item group flex items-center gap-3 sm:gap-4'>
-                <div className='w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:bg-[#D3FD50]/10 group-hover:border-[#D3FD50]/30 transition-all duration-300'>
-                  <svg className='w-5 h-5 sm:w-6 sm:h-6 text-[#D3FD50]' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+            <div className='space-y-2 sm:space-y-3 lg:space-y-4'>
+              <a href='mailto:metisprimeproduction@gmail.com' className='info-item group flex items-center gap-2 sm:gap-3'>
+                <div className='w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:bg-[#D3FD50]/10 group-hover:border-[#D3FD50]/30 transition-all duration-300'>
+                  <svg className='w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-[#D3FD50]' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' />
                   </svg>
                 </div>
                 <div className='flex-1 min-w-0'>
                   <p className='text-white/40 text-xs uppercase tracking-wider mb-1'>Email</p>
-                  <p className='text-white group-hover:text-[#D3FD50] transition-colors text-sm sm:text-base break-words'>metisprimeproduction@gmail.com</p>
+                  <p className='text-white group-hover:text-[#D3FD50] transition-colors text-xs sm:text-sm break-words'>metisprimeproduction@gmail.com</p>
                 </div>
               </a>
 
-              <a href='tel:+971503596171' className='info-item group flex items-center gap-3 sm:gap-4'>
-                <div className='w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:bg-[#D3FD50]/10 group-hover:border-[#D3FD50]/30 transition-all duration-300'>
-                  <svg className='w-5 h-5 sm:w-6 sm:h-6 text-[#D3FD50]' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+              <a href='tel:+971503596171' className='info-item group flex items-center gap-2 sm:gap-3'>
+                <div className='w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:bg-[#D3FD50]/10 group-hover:border-[#D3FD50]/30 transition-all duration-300'>
+                  <svg className='w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-[#D3FD50]' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z' />
                   </svg>
                 </div>
                 <div className='flex-1 min-w-0'>
                   <p className='text-white/40 text-xs uppercase tracking-wider mb-1'>Phone</p>
-                  <p className='text-white group-hover:text-[#D3FD50] transition-colors text-sm sm:text-base'>+971507304941</p>
+                  <p className='text-white group-hover:text-[#D3FD50] transition-colors text-xs sm:text-sm'>+971507304941</p>
                 </div>
               </a>
 
-              <div className='info-item flex items-center gap-3 sm:gap-4'>
-                <div className='w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center'>
-                  <svg className='w-5 h-5 sm:w-6 sm:h-6 text-[#D3FD50]' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+              <div className='info-item flex items-center gap-2 sm:gap-3'>
+                <div className='w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center'>
+                  <svg className='w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-[#D3FD50]' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z' />
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M15 11a3 3 0 11-6 0 3 3 0 016 0z' />
                   </svg>
                 </div>
                 <div className='flex-1 min-w-0'>
                   <p className='text-white/40 text-xs uppercase tracking-wider mb-1'>Location</p>
-                  <p className='text-white text-sm sm:text-base'>Sharjah, UAE</p>
+                  <p className='text-white text-xs sm:text-sm'>Sharjah, UAE</p>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className='info-item flex gap-2 sm:gap-3 mt-6 sm:mt-8'>
+            <div className='info-item flex gap-1 sm:gap-2 mt-3 sm:mt-4 lg:mt-6'>
               {['IG', 'FB', 'IN', 'BE'].map((s) => (
-                <a key={s} href='#' className='w-10 h-10 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-xs sm:text-sm font-[font2] hover:bg-[#D3FD50] hover:text-black hover:border-[#D3FD50] transition-all duration-300'>
+                <a key={s} href='#' className='w-7 h-7 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-xs font-[font2] hover:bg-[#D3FD50] hover:text-black hover:border-[#D3FD50] transition-all duration-300'>
                   {s}
                 </a>
               ))}
@@ -225,10 +225,10 @@ const Contact = () => {
         </div>
 
         {/* Right Side - Form */}
-        <div className='w-full lg:w-1/2 px-4 sm:px-6 md:px-8 lg:px-16 py-16 sm:py-20 lg:py-0 flex items-center justify-center min-h-[50vh] lg:min-h-screen'>
+        <div className='w-full lg:w-1/2 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 lg:py-0 flex items-center justify-center min-h-[50vh] lg:min-h-screen'>
           <div 
             ref={formCardRef}
-            className='w-full max-w-sm sm:max-w-md bg-white/[0.03] backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-white/10 p-6 sm:p-8 md:p-10 relative overflow-hidden'
+            className='w-full max-w-xs sm:max-w-sm bg-white/[0.03] backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl border border-white/10 p-4 sm:p-6 md:p-8 lg:p-10 relative overflow-hidden'
           >
             {/* Card Glow */}
             <div className='absolute -top-16 -right-16 sm:-top-20 sm:-right-20 w-32 h-32 sm:w-40 sm:h-40 bg-[#D3FD50]/20 rounded-full blur-3xl'></div>
