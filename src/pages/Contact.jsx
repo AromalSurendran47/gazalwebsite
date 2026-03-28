@@ -137,15 +137,15 @@ const Contact = () => {
       <div ref={containerRef} className='min-h-screen bg-[#050505] text-white font-[font1] overflow-hidden relative'>
       {/* Animated Background */}
       <div className='absolute inset-0 overflow-hidden'>
-        <div className='orb-1 absolute top-20 left-1/4 w-[500px] h-[500px] bg-[#D3FD50]/20 rounded-full blur-[120px]'></div>
-        <div className='orb-2 absolute bottom-20 right-1/4 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[100px]'></div>
-        <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[150px]'></div>
+        <div className='orb-1 absolute top-10 sm:top-20 left-1/4 w-[200px] h-[200px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] bg-[#D3FD50]/20 rounded-full blur-[60px] sm:blur-[100px] lg:blur-[120px]'></div>
+        <div className='orb-2 absolute bottom-10 sm:bottom-20 right-1/4 w-[150px] h-[150px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] bg-purple-500/10 rounded-full blur-[50px] sm:blur-[80px] lg:blur-[100px]'></div>
+        <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-blue-500/5 rounded-full blur-[75px] sm:blur-[120px] lg:blur-[150px]'></div>
       </div>
 
       {/* Grid Pattern */}
       <div className='absolute inset-0 opacity-[0.03]' style={{
         backgroundImage: `linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
+        backgroundSize: '30px 30px sm:45px 45px lg:60px 60px'
       }}></div>
 
       <div ref={contentRef} className='relative z-10 min-h-screen flex flex-col lg:flex-row'>

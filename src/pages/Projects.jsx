@@ -161,11 +161,11 @@ const Projects = () => {
 
       {/* Projects Grid */}
       <div ref={containerRef} className='px-3 sm:px-5 md:px-8 lg:px-12 pb-16 sm:pb-20 lg:pb-32'>
-        <div className='max-w-[1800px] mx-auto grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8'>
+        <div className='max-w-[1800px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-6 xl:gap-8'>
           {projects.map((project, idx) => (
             <div 
               key={idx} 
-              className='h-[250px] xs:h-[280px] sm:h-[320px] md:h-[380px] lg:h-[450px] xl:h-[500px] w-full'
+              className='h-[200px] sm:h-[280px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[450px] w-full'
             >
               <ProjectCard 
                 video1={project.video1} 
