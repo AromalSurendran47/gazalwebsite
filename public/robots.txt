@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://metisprimeproduction.com/sitemap.xml
+
+# Block common non-content paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /src/
+
+# Allow search engines to crawl all important content
+Allow: /
+Allow: /projects
+Allow: /services
+Allow: /contact
+Allow: /agence
+
+Crawl-delay: 1

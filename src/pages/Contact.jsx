@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import SEO from '../components/SEO/SEO'
 
 const Contact = () => {
   const containerRef = useRef(null)
@@ -101,7 +102,39 @@ const Contact = () => {
   }
 
   return (
-    <div ref={containerRef} className='min-h-screen bg-[#050505] text-white font-[font1] overflow-hidden relative'>
+    <>
+      <SEO 
+        title="Contact"
+        description="Contact Metis Prime Production for your next project. Get in touch with our team for exceptional digital production, branding, and creative services in Dubai, UAE."
+        keywords="contact Metis Prime Production, creative agency contact, Dubai UAE, digital production contact, branding services, web development contact, cinematic videography"
+        canonicalUrl="https://metisprimeproduction.com/contact"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact Metis Prime Production",
+          "description": "Get in touch with Metis Prime Production for your next project",
+          "provider": {
+            "@type": "Organization",
+            "name": "Metis Prime Production",
+            "url": "https://metisprimeproduction.com",
+            "email": "metisprimeproduction@gmail.com",
+            "telephone": "+971507304941",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "UAE",
+              "addressLocality": "Sharjah"
+            }
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "metisprimeproduction@gmail.com",
+            "telephone": "+971507304941",
+            "contactType": "customer service",
+            "availableLanguage": "English"
+          }
+        }}
+      />
+      <div ref={containerRef} className='min-h-screen bg-[#050505] text-white font-[font1] overflow-hidden relative'>
       {/* Animated Background */}
       <div className='absolute inset-0 overflow-hidden'>
         <div className='orb-1 absolute top-20 left-1/4 w-[500px] h-[500px] bg-[#D3FD50]/20 rounded-full blur-[120px]'></div>
@@ -328,6 +361,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

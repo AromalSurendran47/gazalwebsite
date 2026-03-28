@@ -233,6 +233,12 @@ const ProjectDetail = () => {
       description: 'MV AGUSTA F3'
     },
     {
+      id: 20,
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774718693/bike_zpaert.mp4',
+      category: 'Automotive',
+      description: 'MV AGUSTA F3'
+    },
+    {
       id: 2,
       // title: 'Automotive Gallery',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773404608/drift_htdsre.mp4',
@@ -345,18 +351,18 @@ const ProjectDetail = () => {
       category: 'Fitness',
       description: ' Fitness videography'
     },
-    {
-      id: 12,
-      title: 'Gym Hawk Zone',
-      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773337084/gym_3_xlbb0g.mp4',
-      category: 'Fitness',
-      description: ' Fitness videography'
-    }
+    // {
+    //   id: 12,
+    //   title: 'Gym Hawk Zone',
+    //   video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773337084/gym_3_xlbb0g.mp4',
+    //   category: 'Fitness',
+    //   description: ' Fitness videography'
+    // }
   ]
 
   // Filter projects based on URL parameter
   const filteredProjects = id === '1' 
-    ? projects.filter(project => project.id === 1) // Show only automotive video for projectId 1
+    ? projects.filter(project => project.id === 1 || project.id === 20) // Show automotive videos for projectId 1
     : id === '2'
     ? projects.filter(project => project.id === 5 || project.id === 10 || project.id === 11 || project.id === 12) // Show interior and gym videos for projectId 2
     : id === '3'

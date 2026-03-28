@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import { Link } from 'react-router-dom'
 import ServiceCarousel from '../components/services/ServiceCarousel'
+import SEO from '../components/SEO/SEO'
 
 const Services = () => {
   const heroRef = useRef(null)
@@ -72,79 +73,173 @@ const Services = () => {
 
   const services = [
     {
-      title: 'Visuals',
-      description: 'Create stunning visual content that captures attention and communicates your brand message effectively. We design compelling graphics, imagery, and visual elements that make your brand stand out.',
-      images: [
-        'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&h=800&fit=crop'
-      ],
-      features: ['Graphic Design', 'Visual Storytelling', 'Brand Imagery', 'Creative Direction']
-    },
-    {
-      title: 'Strategies',
-      description: 'Develop comprehensive digital strategies that drive growth and engagement. We analyze your market, audience, and goals to create actionable plans that deliver measurable results.',
+      title: 'Search Engine Optimization (SEO)',
+      description: 'Improve your website ranking on Google Search with comprehensive SEO services including keyword research, on-page optimization, and quality backlinks. Our goal is to drive organic (free) traffic to your business.',
       images: [
         'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop',
         'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop',
         'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop'
       ],
-      features: ['Market Analysis', 'Growth Planning', 'Content Strategy', 'Performance Metrics']
+      features: ['Keyword Research', 'On-Page SEO', 'Backlink Building', 'Rank Tracking']
     },
     {
-      title: 'Website Development',
-      description: 'Build powerful, responsive websites that convert visitors into customers. From design to development, we create digital experiences that are fast, beautiful, and user-friendly.',
+      title: 'Social Media Marketing (SMM)',
+      description: 'Leverage platforms like Instagram, Facebook, and TikTok with expert content creation, engaging reels, targeted ads, and community management. Perfect for branding and audience growth.',
       images: [
-        'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop'
+        'https://images.unsplash.com/photo-1611926653458-09294fe3c12c?w=1200&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1562577309-4932fdd78cd1?w=1200&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=800&fit=crop'
       ],
-      features: ['UI/UX Design', 'Frontend Development', 'Backend Integration', 'SEO Optimization']
+      features: ['Content Creation', 'Reels & Stories', 'Paid Social Ads', 'Community Management']
     },
     {
-      title: 'Branding',
-      description: 'Craft a powerful brand identity that resonates with your audience. We develop comprehensive branding solutions including logos, guidelines, and visual systems that tell your unique story.',
+      title: 'Paid Advertising (PPC)',
+      description: 'Get instant traffic and leads with targeted ads on Google Ads and social platforms. We specialize in search ads, display ads, and video ads that deliver immediate results.',
       images: [
-        'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&h=800&fit=crop'
-      ],
-      features: ['Logo Design', 'Brand Guidelines', 'Visual Identity', 'Brand Strategy']
-    },
-    {
-      title: 'Identity',
-      description: 'Establish a distinctive brand identity that sets you apart from the competition. We create cohesive visual and verbal identities that reflect your values and connect with your target audience.',
-      images: [
-        'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=800&fit=crop'
-      ],
-      features: ['Brand Personality', 'Visual Systems', 'Voice & Tone', 'Brand Architecture']
-    },
-    {
-      title: 'Innovation',
-      description: 'Push the boundaries of digital creativity with innovative solutions. We leverage cutting-edge technology and creative thinking to deliver breakthrough experiences that captivate your audience.',
-      images: [
-        'https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=1200&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop',
         'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop',
         'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop'
       ],
-      features: ['Creative Technology', 'Digital Innovation', 'Interactive Design', 'Future-Ready Solutions']
+      features: ['Google Ads', 'Social Media Ads', 'Display Advertising', 'Video Ads']
     },
     {
-      title: 'Cinematic Videography',
-      description: 'Produce stunning cinematic videos that tell your story with impact. Our videography services capture your brand essence through professional filming, editing, and post-production.',
+      title: 'Content Marketing',
+      description: 'Build trust and authority with compelling blog posts, engaging captions, professional videos, and persuasive scripts. Content marketing works seamlessly with SEO for maximum impact.',
+      images: [
+        'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=800&fit=crop'
+      ],
+      features: ['Blog Writing', 'Content Strategy', 'Video Scripts', 'Copywriting']
+    },
+    {
+      title: 'Email Marketing',
+      description: 'Create effective email campaigns using industry-leading tools like Mailchimp. From promotional campaigns to newsletters and customer retention strategies, we maximize your email marketing ROI.',
+      images: [
+        'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1554469384-e58e5bee2aba?w=1200&h=800&fit=crop'
+      ],
+      features: ['Campaign Design', 'Newsletter Creation', 'Automation', 'Analytics']
+    },
+    {
+      title: 'Video Marketing',
+      description: 'Create engaging YouTube videos, Instagram Reels, and professional video ads that drive high engagement. Perfect for your videography background, we deliver content that captures attention.',
       images: [
         'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1200&h=800&fit=crop',
         'https://images.unsplash.com/photo-1603796846097-bee99e4a601f?w=1200&h=800&fit=crop',
         'https://images.unsplash.com/photo-1535016120720-40c646be5580?w=1200&h=800&fit=crop'
       ],
-      features: ['Professional Filming', 'Video Editing', 'Color Grading', 'Motion Graphics']
+      features: ['YouTube Content', 'Instagram Reels', 'Video Ads', 'Video Production']
+    },
+    {
+      title: 'Website Design & Development',
+      description: 'Build professional business websites and landing pages with UX/UI optimization and conversion-focused design. We create websites that not only look great but convert visitors into customers.',
+      images: [
+        'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop'
+      ],
+      features: ['UI/UX Design', 'Frontend Development', 'Conversion Optimization', 'Responsive Design']
+    },
+    {
+      title: 'Branding & Strategy',
+      description: 'Develop your complete brand identity including logo design, brand voice, and visual identity. We create comprehensive marketing strategies with target audience research to ensure your brand stands out.',
+      images: [
+        'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=1200&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&h=800&fit=crop'
+      ],
+      features: ['Logo Design', 'Brand Identity', 'Marketing Strategy', 'Audience Research']
     }
   ]
 
   return (
-    <div className='min-h-screen bg-black text-white font-[font1] overflow-hidden'>
+    <>
+      <SEO 
+        title="Services"
+        description="Metis Prime Production offers comprehensive digital marketing services including SEO, Social Media Marketing, PPC Advertising, Content Marketing, Email Marketing, Video Marketing, Website Development, and Branding Strategy."
+        keywords="Metis Prime Production, SEO, social media marketing, PPC advertising, content marketing, email marketing, video marketing, website development, branding strategy, digital marketing agency, Dubai UAE"
+        canonicalUrl="https://metisprimeproduction.com/services"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "provider": {
+            "@type": "Organization",
+            "name": "Metis Prime Production",
+            "url": "https://metisprimeproduction.com"
+          },
+          "serviceType": "Digital Marketing Services",
+          "description": "Comprehensive digital marketing solutions including SEO, social media marketing, PPC, content marketing, email marketing, video marketing, website development, and branding strategy.",
+          "offers": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Search Engine Optimization (SEO)",
+                "description": "Improve website ranking on Google Search with comprehensive SEO services including keyword research, on-page optimization, and quality backlinks."
+              }
+            },
+            {
+              "@type": "Offer", 
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Social Media Marketing (SMM)",
+                "description": "Leverage platforms like Instagram, Facebook, and TikTok with expert content creation, engaging reels, targeted ads, and community management."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service", 
+                "name": "Paid Advertising (PPC)",
+                "description": "Get instant traffic and leads with targeted ads on Google Ads and social platforms including search ads, display ads, and video ads."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Content Marketing",
+                "description": "Build trust and authority with compelling blog posts, engaging captions, professional videos, and persuasive scripts."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Email Marketing", 
+                "description": "Create effective email campaigns using industry-leading tools like Mailchimp for promotions, newsletters, and customer retention."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Video Marketing",
+                "description": "Create engaging YouTube videos, Instagram Reels, and professional video ads that drive high engagement."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Website Design & Development",
+                "description": "Build professional business websites and landing pages with UX/UI optimization and conversion-focused design."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Branding & Strategy",
+                "description": "Develop complete brand identity including logo design, brand voice, and visual identity with comprehensive marketing strategies."
+              }
+            }
+          ]
+        }}
+      />
+      <div className='min-h-screen bg-black text-white font-[font1] overflow-hidden'>
       
       {/* Hero Section - Modern Landing */}
       <div className='relative w-full min-h-screen lg:h-screen flex items-center justify-center px-5 lg:px-12 py-20 lg:py-0 overflow-hidden'>
@@ -290,8 +385,8 @@ const Services = () => {
           </div>
         </div>
       </div>
-
     </div>
+    </>
   )
 }
 
