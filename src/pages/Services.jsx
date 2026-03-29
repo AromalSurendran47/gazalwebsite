@@ -86,9 +86,9 @@ const Services = () => {
       title: 'Social Media Marketing (SMM)',
       description: 'Leverage platforms like Instagram, Facebook, and TikTok with expert content creation, engaging reels, targeted ads, and community management. Perfect for branding and audience growth.',
       images: [
-        'https://images.unsplash.com/photo-1611926653458-09294fe3c12c?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1562577309-4932fdd78cd1?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=800&fit=crop'
+        'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=800&fit=crop'
       ],
       features: ['Content Creation', 'Reels & Stories', 'Paid Social Ads', 'Community Management']
     },
