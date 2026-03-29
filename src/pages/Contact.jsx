@@ -215,7 +215,13 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className='info-item flex gap-1 sm:gap-2 mt-3 sm:mt-4 lg:mt-6'>
-              {['IG', 'FB', 'IN', 'BE'].map((s) => (
+              <a href='https://www.instagram.com/metisprime_production' target='_blank' rel='noopener noreferrer' className='w-7 h-7 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-xs font-[font2] hover:bg-[#D3FD50] hover:text-black hover:border-[#D3FD50] transition-all duration-300'>
+                IG
+              </a>
+              <a href='https://www.instagram.com/metisprime_production' target='_blank' rel='noopener noreferrer' className='w-7 h-7 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-xs font-[font2] hover:bg-[#D3FD50] hover:text-black hover:border-[#D3FD50] transition-all duration-300'>
+                IN
+              </a>
+              {['FB', 'BE'].map((s) => (
                 <a key={s} href='#' className='w-7 h-7 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-xs font-[font2] hover:bg-[#D3FD50] hover:text-black hover:border-[#D3FD50] transition-all duration-300'>
                   {s}
                 </a>
