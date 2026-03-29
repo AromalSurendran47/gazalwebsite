@@ -1,9 +1,10 @@
+import React, { useRef, useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import React, { useContext, useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { NavbarContext } from '../../context/NavContext'
 import logoMain from '../../assets/logo-main.PNG?url'
+import frontImage from '../../assets/front.jpeg?url'
+import { NavbarContext } from '../../context/NavContext'
 
 const FullScreenNav = () => {
     const fullNavLinksRef = useRef(null)
@@ -115,15 +116,15 @@ const FullScreenNav = () => {
                                 <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
                                     <div className='moveX flex items-center'>
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
-                                        <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
+                                        <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
-                                        <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                        <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
                                     </div>
                                     <div className='moveX flex items-center'>
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
-                                        <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
+                                        <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
-                                        <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                        <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
                                     </div>
                                 </div>
                             </Link>
@@ -134,15 +135,15 @@ const FullScreenNav = () => {
                                 <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
                                     <div className='moveX flex items-center'>
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
-                                        <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
+                                        <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
-                                        <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                        <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
                                     </div>
                                     <div className='moveX flex items-center'>
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
-                                        <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
+                                        <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
-                                        <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                        <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
                                     </div>
                                 </div>
                             </Link>
@@ -153,15 +154,15 @@ const FullScreenNav = () => {
                                 <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
                                     <div className='moveX flex items-center'>
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
-                                        <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
+                                        <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
-                                        <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                        <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
                                     </div>
                                     <div className='moveX flex items-center'>
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
-                                        <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
+                                        <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
-                                        <img className='lg:h-36 h-14 rounded-full shrink-0 lg:w-96 w-32 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                        <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
                                     </div>
                                 </div>
                             </Link>

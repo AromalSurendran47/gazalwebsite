@@ -46,7 +46,7 @@ const Projects = () => {
       description2: ''
     },
     {
-      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773404608/drift_htdsre.mp4',
+      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774799665/event_1_wxvyin.mp4',
       video2: '',
       projectId: 5,
       title1: 'Drift',
