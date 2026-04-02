@@ -1,24 +1,36 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const ProjectCard = (props) => {
     const navigate = useNavigate()
     const videoRef1 = useRef(null)
     const videoRef2 = useRef(null)
+    const [isMobile, setIsMobile] = useState(false)
+    
+    // Detect mobile device
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+        }
+        
+        checkMobile()
+        window.addEventListener('resize', checkMobile)
+        return () => window.removeEventListener('resize', checkMobile)
+    }, [])
     
     const handleClick = () => {
         navigate(`/project/${props.projectId || '1'}`)
     }
 
     const handleTouchStart = (videoRef) => {
-        if (videoRef.current) {
+        if (!isMobile && videoRef.current) {
             videoRef.current.currentTime = 0;
             videoRef.current.play().catch(() => {})
         }
     }
 
     const handleTouchEnd = (videoRef) => {
-        if (videoRef.current) {
+        if (!isMobile && videoRef.current) {
             setTimeout(() => {
                 videoRef.current.pause()
                 videoRef.current.currentTime = 0
@@ -27,14 +39,14 @@ const ProjectCard = (props) => {
     }
 
     const handleMouseEnter = (videoRef) => {
-        if (videoRef.current) {
+        if (!isMobile && videoRef.current) {
             videoRef.current.currentTime = 0;
             videoRef.current.play().catch(() => {})
         }
     }
 
     const handleMouseLeave = (videoRef) => {
-        if (videoRef.current) {
+        if (!isMobile && videoRef.current) {
             videoRef.current.pause()
             videoRef.current.currentTime = 0
         }
@@ -50,16 +62,29 @@ const ProjectCard = (props) => {
                 onTouchStart={() => handleTouchStart(videoRef1)}
                 onTouchEnd={() => handleTouchEnd(videoRef1)}
             >
-                <video 
-                    ref={videoRef1}
-                    className='absolute inset-0 h-full w-full object-cover z-0' 
-                    loop 
-                    muted 
-                    playsInline
-                    preload='metadata'
-                >
-                    <source src={props.video1} type='video/mp4' />
-                </video>
+                {/* Show video on desktop, image on mobile */}
+                {!isMobile ? (
+                    <video 
+                        ref={videoRef1}
+                        className='absolute inset-0 h-full w-full object-cover z-0' 
+                        loop 
+                        muted 
+                        playsInline
+                        preload='metadata'
+                    >
+                        <source src={props.video1} type='video/mp4' />
+                    </video>
+                ) : (
+                    <img 
+                        src={props.image1 || `https://picsum.photos/seed/${props.title1 || 'project'}1/400/300.jpg`}
+                        alt={props.title1 || 'Project'}
+                        className='absolute inset-0 h-full w-full object-cover z-0'
+                        loading='lazy'
+                        onError={(e) => {
+                            e.target.src = `https://picsum.photos/seed/fallback${props.projectId}/400/300.jpg`;
+                        }}
+                    />
+                )}
                 
                 {/* Ambient Light Effect */}
                 <div className='absolute inset-0 rounded-lg sm:rounded-xl lg:rounded-2xl bg-gradient-to-t from-[#D3FD50]/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 pointer-events-none'></div>
@@ -93,16 +118,29 @@ const ProjectCard = (props) => {
                 onTouchStart={() => handleTouchStart(videoRef2)}
                 onTouchEnd={() => handleTouchEnd(videoRef2)}
             >
-                <video 
-                    ref={videoRef2}
-                    className='absolute inset-0 h-full w-full object-cover z-0' 
-                    loop 
-                    muted 
-                    playsInline
-                    preload='metadata'
-                >
-                    <source src={props.video2} type='video/mp4' />
-                </video>
+                {/* Show video on desktop, image on mobile */}
+                {!isMobile ? (
+                    <video 
+                        ref={videoRef2}
+                        className='absolute inset-0 h-full w-full object-cover z-0' 
+                        loop 
+                        muted 
+                        playsInline
+                        preload='metadata'
+                    >
+                        <source src={props.video2} type='video/mp4' />
+                    </video>
+                ) : (
+                    <img 
+                        src={props.image2 || `https://picsum.photos/seed/${props.title2 || 'project'}2/400/300.jpg`}
+                        alt={props.title2 || 'Project'}
+                        className='absolute inset-0 h-full w-full object-cover z-0'
+                        loading='lazy'
+                        onError={(e) => {
+                            e.target.src = `https://picsum.photos/seed/fallback${props.projectId}b/400/300.jpg`;
+                        }}
+                    />
+                )}
                 
                 {/* Ambient Light Effect */}
                 <div className='absolute inset-0 rounded-lg sm:rounded-xl lg:rounded-2xl bg-gradient-to-t from-[#D3FD50]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none'></div>

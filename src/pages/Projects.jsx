@@ -10,6 +10,7 @@ const Projects = () => {
 
   const projects = [
     {
+      image1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339105/AUTOMOTIVE_dj5f0c.jpg',
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339105/AUTOMOTIVE_dj5f0c.mp4',
       video2: '',
       projectId: 1,
@@ -19,6 +20,7 @@ const Projects = () => {
       description2: ''
     }, 
     {
+      image1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336858/food_reel_post_wkwjpq.jpg',
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336858/food_reel_post_wkwjpq.mp4',
       video2: '',
       projectId: 3,
@@ -28,6 +30,7 @@ const Projects = () => {
       description2: ''
     },
     {
+      image1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336855/potraits_r2mmme.jpg',
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336855/potraits_r2mmme.mp4',
       video2: '',
       projectId: 4,
@@ -37,6 +40,7 @@ const Projects = () => {
       description2: ''
     },
     {
+      image1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774721957/fitness_display_eh17dl.jpg',
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774721957/fitness_display_eh17dl.mp4',
       video2: '',
       projectId: 2,
@@ -46,6 +50,7 @@ const Projects = () => {
       description2: ''
     },
     {
+      image1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774799665/event_1_wxvyin.jpg',
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774799665/event_1_wxvyin.mp4',
       video2: '',
       projectId: 5,
@@ -168,6 +173,7 @@ const Projects = () => {
               className='h-[200px] sm:h-[280px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[450px] w-full'
             >
               <ProjectCard 
+                image1={project.image1}
                 video1={project.video1} 
                 video2={project.video2} 
                 projectId={project.projectId}

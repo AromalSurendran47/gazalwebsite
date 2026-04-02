@@ -76,10 +76,13 @@ const FullScreenNav = () => {
         <nav
             ref={fullScreenRef}
             id='fullscreennav'
-            className='fullscreennav hidden fixed inset-0 text-white overflow-hidden h-screen w-full z-50'
+            className='fullscreennav hidden fixed inset-0 text-white overflow-hidden h-screen w-full z-50 bg-black'
             role='navigation'
             aria-label='Main navigation menu'
         >
+            {/* Solid black background overlay */}
+            <div className='absolute inset-0 bg-black z-10' aria-hidden='true'></div>
+            
             <div className='h-screen w-full fixed' aria-hidden='true'>
                 <div className='h-full w-full flex' role='presentation'>
                     <div className='stairing h-full w-1/5 bg-black lg:border-r lg:border-black' aria-hidden='true'></div>
@@ -89,7 +92,7 @@ const FullScreenNav = () => {
                     <div className='stairing h-full w-1/5 bg-black' aria-hidden='true'></div>
                 </div>
             </div>
-            <header ref={fullNavLinksRef} className='relative'>
+            <header ref={fullNavLinksRef} className='relative z-20'>
                 <div className="navlink flex w-full justify-between lg:p-5 p-2 items-center">
                     <div className=''>
                         <div className='lg:w-36 w-24'>
