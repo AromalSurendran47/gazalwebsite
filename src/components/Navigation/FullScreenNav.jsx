@@ -90,7 +90,7 @@ const FullScreenNav = () => {
                 </div>
             </div>
             <header ref={fullNavLinksRef} className='relative'>
-                <div className="navlink flex w-full justify-between lg:p-5 p-2 items-start">
+                <div className="navlink flex w-full justify-between lg:p-5 p-2 items-center">
                     <div className=''>
                         <div className='lg:w-36 w-24'>
                             <img src={logoMain} alt="K72 Creative Agency Logo" className="w-full" />
@@ -100,12 +100,12 @@ const FullScreenNav = () => {
                         onClick={() => {
                             setNavOpen(false)
                         }}
-                        className='lg:h-32 h-20 w-20 lg:w-32 relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D3FD50] focus:ring-offset-2 focus:ring-offset-black rounded-lg'
+                        className='lg:h-16 h-10 w-16 lg:w-20 relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D3FD50] focus:ring-offset-2 focus:ring-offset-black rounded-lg'
                         aria-label='Close navigation menu'
                         type='button'
                     >
-                        <div className='lg:h-44 h-28 lg:w-1 w-0.5 -rotate-45 origin-top absolute bg-[#D3FD50]' aria-hidden='true'></div>
-                        <div className='lg:h-44 h-28 lg:w-1 w-0.5 right-0 rotate-45 origin-top absolute bg-[#D3FD50]' aria-hidden='true'></div>
+                        <div className='lg:h-25 h-12 lg:w-1 w-0.5 -rotate-45 absolute bg-[#D3FD50] inset-0 m-auto' aria-hidden='true'></div>
+                        <div className='lg:h-25 h-12 lg:w-1 w-0.5 right-0 rotate-45 absolute bg-[#D3FD50] inset-0 m-auto' aria-hidden='true'></div>
                     </button>
                 </div>
                 <main className='pt-20 lg:pt-4 pb-32 lg:pb-46 px-4 lg:px-0' role='main'>
