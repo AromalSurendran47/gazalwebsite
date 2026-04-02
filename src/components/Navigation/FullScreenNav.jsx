@@ -2,7 +2,7 @@ import React, { useRef, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import logoMain from '../../assets/logo-main.PNG?url'
+// import logoMain from '../../assets/logo-main.PNG?url'
 import frontImage from '../../assets/front.jpeg?url'
 import { NavbarContext } from '../../context/NavContext'
 
@@ -82,10 +82,10 @@ const FullScreenNav = () => {
         >
             <div className='h-screen w-full fixed' aria-hidden='true'>
                 <div className='h-full w-full flex' role='presentation'>
-                    <div className='stairing h-full w-1/5 bg-black' aria-hidden='true'></div>
-                    <div className='stairing h-full w-1/5 bg-black' aria-hidden='true'></div>
-                    <div className='stairing h-full w-1/5 bg-black' aria-hidden='true'></div>
-                    <div className='stairing h-full w-1/5 bg-black' aria-hidden='true'></div>
+                    <div className='stairing h-full w-1/5 bg-black lg:border-r lg:border-black' aria-hidden='true'></div>
+                    <div className='stairing h-full w-1/5 bg-black lg:border-r lg:border-black' aria-hidden='true'></div>
+                    <div className='stairing h-full w-1/5 bg-black lg:border-r lg:border-black' aria-hidden='true'></div>
+                    <div className='stairing h-full w-1/5 bg-black lg:border-r lg:border-black' aria-hidden='true'></div>
                     <div className='stairing h-full w-1/5 bg-black' aria-hidden='true'></div>
                 </div>
             </div>
@@ -93,7 +93,7 @@ const FullScreenNav = () => {
                 <div className="navlink flex w-full justify-between lg:p-5 p-2 items-center">
                     <div className=''>
                         <div className='lg:w-36 w-24'>
-                            <img src={logoMain} alt="K72 Creative Agency Logo" className="w-full" />
+                            {/* <img src={logoMain} alt="K72 Creative Agency Logo" className="w-full" /> */}
                         </div>
                     </div>
                     <button
