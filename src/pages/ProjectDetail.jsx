@@ -11,6 +11,18 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
   const fullScreenVideoRef = useRef(null)
   const [isFullScreen, setIsFullScreen] = useState(false)
   const [seekProgress, setSeekProgress] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const handleVideoClick = () => {
     setIsFullScreen(true)
@@ -46,21 +58,33 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
         ref={cardRef}
         className='video-card group relative overflow-hidden bg-black cursor-pointer'
         style={{ aspectRatio: '16/10' }}
-        onMouseEnter={() => handleVideoMouseEnter(videoRef, cardRef, project.id)}
-        onMouseLeave={() => handleVideoMouseLeave(videoRef, cardRef)}
+        onMouseEnter={() => !isMobile && handleVideoMouseEnter(videoRef, cardRef, project.id)}
+        onMouseLeave={() => !isMobile && handleVideoMouseLeave(videoRef, cardRef)}
         onClick={handleVideoClick}
       >
-      {/* Video */}
-      <video
-        ref={videoRef}
-        className='h-full w-full object-cover'
-        loop
-        muted
-        playsInline
-        preload='metadata'
-      >
-        <source src={project.video} type='video/mp4' />
-      </video>
+      {/* Video on desktop, Image on mobile */}
+      {!isMobile ? (
+        <video
+          ref={videoRef}
+          className='h-full w-full object-cover'
+          loop
+          muted
+          playsInline
+          preload='metadata'
+        >
+          <source src={project.video} type='video/mp4' />
+        </video>
+      ) : (
+        <img 
+          src={project.video.replace('.mp4', '.jpg')}
+          alt={project.description || 'Project'}
+          className='h-full w-full object-cover'
+          loading='lazy'
+          onError={(e) => {
+            e.target.src = `https://picsum.photos/seed/fallback${project.id}/800/500.jpg`;
+          }}
+        />
+      )}
 
       {/* Gradient Overlay */}
       <div className='absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500'></div>
@@ -457,6 +481,11 @@ const ProjectDetail = () => {
   })
 
   const handleVideoMouseEnter = (videoRef, cardRef, projectId) => {
+    // Don't play videos on mobile
+    if (window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      return
+    }
+    
     if (videoRef.current) {
       videoRef.current.play().catch(() => {})
     }
@@ -470,6 +499,11 @@ const ProjectDetail = () => {
   }
 
   const handleVideoMouseLeave = (videoRef, cardRef) => {
+    // Don't handle videos on mobile
+    if (window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      return
+    }
+    
     if (videoRef.current) {
       videoRef.current.pause()
       videoRef.current.currentTime = 0
@@ -486,7 +520,7 @@ const ProjectDetail = () => {
   return (
     <div className='min-h-screen bg-black text-white font-[font1] overflow-hidden'>
       {/* Header Section */}
-      <div className='relative pt-32 lg:pt-40 pb-20 px-5 lg:px-12'>
+      <div className='relative pt-20 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 pb-20 px-5 lg:px-12'>
         <div className='max-w-[1800px] mx-auto'>
           {/* Back Button */}
           <div 

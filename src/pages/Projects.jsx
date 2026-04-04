@@ -127,7 +127,7 @@ const Projects = () => {
   return (
     <div className='min-h-screen bg-black text-white font-[font1] overflow-hidden'>
       {/* Hero Section */}
-      <div className='relative pt-16 sm:pt-20 md:pt-24 lg:pt-32 xl:pt-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-24 px-3 sm:px-5 md:px-8 lg:px-12'>
+      <div className='relative pt-27 sm:pt-20 md:pt-24 lg:pt-32 xl:pt-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-24 px-3 sm:px-5 md:px-8 lg:px-12'>
         {/* Back Button */}
         {/* <button
           onClick={() => navigate('/')}
