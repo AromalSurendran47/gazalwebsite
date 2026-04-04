@@ -10,6 +10,7 @@ const Projects = () => {
 
   const projects = [
     {
+      image1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339105/AUTOMOTIVE_dj5f0c.jpg',
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339105/AUTOMOTIVE_dj5f0c.mp4',
       video2: '',
       projectId: 1,
@@ -19,6 +20,7 @@ const Projects = () => {
       description2: ''
     }, 
     {
+      image1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336858/food_reel_post_wkwjpq.jpg',
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336858/food_reel_post_wkwjpq.mp4',
       video2: '',
       projectId: 3,
@@ -28,6 +30,7 @@ const Projects = () => {
       description2: ''
     },
     {
+      image1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336855/potraits_r2mmme.jpg',
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336855/potraits_r2mmme.mp4',
       video2: '',
       projectId: 4,
@@ -37,6 +40,7 @@ const Projects = () => {
       description2: ''
     },
     {
+      image1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774721957/fitness_display_eh17dl.jpg',
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774721957/fitness_display_eh17dl.mp4',
       video2: '',
       projectId: 2,
@@ -46,7 +50,8 @@ const Projects = () => {
       description2: ''
     },
     {
-      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773404608/drift_htdsre.mp4',
+      image1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774799665/event_1_wxvyin.jpg',
+      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774799665/event_1_wxvyin.mp4',
       video2: '',
       projectId: 5,
       title1: 'Drift',
@@ -122,7 +127,7 @@ const Projects = () => {
   return (
     <div className='min-h-screen bg-black text-white font-[font1] overflow-hidden'>
       {/* Hero Section */}
-      <div className='relative pt-16 sm:pt-20 md:pt-24 lg:pt-32 xl:pt-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-24 px-3 sm:px-5 md:px-8 lg:px-12'>
+      <div className='relative pt-27 sm:pt-20 md:pt-24 lg:pt-32 xl:pt-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-24 px-3 sm:px-5 md:px-8 lg:px-12'>
         {/* Back Button */}
         {/* <button
           onClick={() => navigate('/')}
@@ -168,6 +173,7 @@ const Projects = () => {
               className='h-[200px] sm:h-[280px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[450px] w-full'
             >
               <ProjectCard 
+                image1={project.image1}
                 video1={project.video1} 
                 video2={project.video2} 
                 projectId={project.projectId}

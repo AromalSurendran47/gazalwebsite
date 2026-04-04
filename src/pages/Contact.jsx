@@ -150,7 +150,7 @@ const Contact = () => {
 
       <div ref={contentRef} className='relative z-10 min-h-screen flex flex-col lg:flex-row max-w-[1400px] mx-auto'>
         {/* Left Side - Info */}
-        <div className='w-full lg:w-1/2 px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-8 sm:py-12 lg:py-0 flex flex-col justify-center lg:justify-center min-h-[50vh] lg:min-h-screen'>
+        <div className='w-full lg:w-1/2 px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-8 sm:py-12 lg:py-0 flex flex-col justify-center lg:justify-center min-h-[50vh] lg:min-h-screen pt-16 sm:pt-20 lg:pt-0'>
           <div className='max-w-md mx-auto lg:mx-0'>
             <div className='overflow-hidden mb-2 sm:mb-3'>
               <p className='hero-text text-[#D3FD50] text-xs sm:text-sm uppercase tracking-[0.1em] sm:tracking-[0.15em] lg:tracking-[0.2em] font-medium'>Contact</p>
@@ -215,7 +215,13 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className='info-item flex gap-1 sm:gap-2 mt-3 sm:mt-4 lg:mt-6'>
-              {['IG', 'FB', 'IN', 'BE'].map((s) => (
+              <a href='https://www.instagram.com/metisprime_production' target='_blank' rel='noopener noreferrer' className='w-7 h-7 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-xs font-[font2] hover:bg-[#D3FD50] hover:text-black hover:border-[#D3FD50] transition-all duration-300'>
+                IG
+              </a>
+              <a href='https://www.instagram.com/metisprime_production' target='_blank' rel='noopener noreferrer' className='w-7 h-7 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-xs font-[font2] hover:bg-[#D3FD50] hover:text-black hover:border-[#D3FD50] transition-all duration-300'>
+                IN
+              </a>
+              {['FB', 'BE'].map((s) => (
                 <a key={s} href='#' className='w-7 h-7 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-xs font-[font2] hover:bg-[#D3FD50] hover:text-black hover:border-[#D3FD50] transition-all duration-300'>
                   {s}
                 </a>
@@ -225,7 +231,7 @@ const Contact = () => {
         </div>
 
         {/* Right Side - Form */}
-        <div className='w-full lg:w-1/2 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 lg:py-0 flex items-center justify-center min-h-[50vh] lg:min-h-screen'>
+        <div className='w-full lg:w-1/2 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 lg:py-0 flex items-center justify-center min-h-[50vh] lg:min-h-screen pt-16 sm:pt-20 lg:pt-0'>
           <div 
             ref={formCardRef}
             className='w-full max-w-xs sm:max-w-sm bg-white/[0.03] backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl border border-white/10 p-4 sm:p-6 md:p-8 lg:p-10 relative overflow-hidden'
