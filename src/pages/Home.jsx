@@ -5,6 +5,7 @@ import HomeBottomText from '../components/home/HomeBottomText'
 // import Clock from '../components/home/Clock'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import SEO from '../components/SEO/SEO'
 
 const Home = () => {
   const heroTextRef = useRef(null)
@@ -50,12 +51,51 @@ const Home = () => {
   })
 
   return (
-    <div className='text-white min-h-screen relative font-[font1]'>
-      <div className='fixed inset-0 z-0'>
-        <Video />
-        <div className='absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30 pointer-events-none' />
-      </div>
-      <div className='relative z-10 flex flex-col min-h-screen'>
+    <>
+      <SEO 
+        title="Home - Creative Digital Production Agency"
+        description="Metis Prime Production - Leading creative agency in Dubai specializing in visual production, branding, web development, and cinematic videography. Transform your brand with our innovative digital solutions."
+        keywords="Metis Prime Production, creative agency Dubai, digital production, visual production, branding agency, web development Dubai, cinematic videography, digital marketing UAE, creative solutions"
+        canonicalUrl="https://metisprimeproduction.com/"
+        ogUrl="https://metisprimeproduction.com/"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Metis Prime Production",
+          "url": "https://metisprimeproduction.com",
+          "logo": "https://metisprimeproduction.com/logo-main.PNG",
+          "description": "Leading creative agency in Dubai specializing in visual production, branding, web development, and cinematic videography.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "UAE",
+            "addressLocality": "Dubai"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+971507304941",
+            "contactType": "customer service",
+            "email": "metisprimeproduction@gmail.com"
+          },
+          "sameAs": [
+            "https://www.instagram.com/metisprime_production",
+            "https://www.instagram.com/metisprimeproduction"
+          ],
+          "services": [
+            "Visual Production",
+            "Digital Strategy", 
+            "Website Development",
+            "Branding",
+            "Identity Design",
+            "Cinematic Videography"
+          ]
+        }}
+      />
+      <div className='text-white min-h-screen relative font-[font1]'>
+        <div className='fixed inset-0 z-0'>
+          <Video />
+          <div className='absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30 pointer-events-none' />
+        </div>
+        <div className='relative z-10 flex flex-col min-h-screen'>
         <div
           ref={infoBarRef}
           className='flex justify-end px-4 sm:px-5 md:px-8 lg:px-12 pt-4 sm:pt-6 pb-2 sm:pb-4 text-white/80'
@@ -91,7 +131,8 @@ const Home = () => {
           <HomeBottomText />
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 

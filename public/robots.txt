@@ -9,12 +9,27 @@ Disallow: /admin/
 Disallow: /api/
 Disallow: /*.json$
 Disallow: /src/
+Disallow: /build/
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /.git/
 
 # Allow search engines to crawl all important content
 Allow: /
 Allow: /projects
+Allow: /project/
 Allow: /services
 Allow: /contact
 Allow: /agence
+
+# Allow crawling of images and videos for SEO
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.gif
+Allow: *.webp
+Allow: *.mp4
+Allow: *.webm
+Allow: *.mov
 
 Crawl-delay: 1
