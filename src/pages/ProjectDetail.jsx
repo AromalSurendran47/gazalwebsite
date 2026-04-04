@@ -406,6 +406,11 @@ const ProjectDetail = () => {
 
   gsap.registerPlugin(ScrollTrigger)
 
+  // Scroll to top when component loads
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   useGSAP(function () {
     // Hero section animation
     if (heroRef.current) {
