@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO/SEO'
 
 const Agence = () => {
 
@@ -244,13 +245,48 @@ const Agence = () => {
   ]
 
   return (
-    <div className='min-h-screen bg-white text-black font-[font1]'>
-      {/* Hero Section */}
-      <div id='page1' className='relative min-h-screen py-1'>
-        <div ref={imageDivRef} className='absolute overflow-hidden lg:h-[20vw] h-[30vw] lg:rounded-3xl rounded-xl lg:w-[15vw] w-[25vw] lg:top-96 -top-80 lg:left-[30vw] left-[30vw] z-10'>
-          <img ref={imageRef} className='h-full object-cover w-full' src="https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg" alt="" />
-        </div>
-        <div className='relative font-[font2]'>
+    <>
+      <SEO 
+        title="About Us - Metis Prime Production Agency"
+        description="Meet the creative team behind Metis Prime Production. Learn about our agency's expertise in visual production, branding, and digital solutions in Dubai, UAE."
+        keywords="Metis Prime Production team, about us, creative agency Dubai, visual production team, branding agency UAE, digital solutions company, agency team members"
+        canonicalUrl="https://metisprimeproduction.com/agence"
+        ogUrl="https://metisprimeproduction.com/agence"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Metis Prime Production",
+          "url": "https://metisprimeproduction.com",
+          "logo": "https://metisprimeproduction.com/logo-main.PNG",
+          "description": "Creative agency in Dubai specializing in visual production, branding, and digital solutions with a talented team of professionals.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "UAE",
+            "addressLocality": "Dubai"
+          },
+          "employee": [
+            {
+              "@type": "Person",
+              "name": "Sophie Auger",
+              "jobTitle": "Conseillère"
+            },
+            {
+              "@type": "Person", 
+              "name": "Carl Godbout",
+              "jobTitle": "Directeur principal"
+            }
+          ],
+          "sameAs": [
+            "https://www.instagram.com/metisprime_production",
+            "https://www.instagram.com/metisprimeproduction"
+          ]
+        }}
+      />
+      <div className='min-h-screen bg-white text-black font-[font1]'>
+        {/* Hero Section */}
+        <div id='page1' className='relative min-h-screen py-1'>
+          <div ref={imageDivRef} className='absolute overflow-hidden lg:h-[20vw] h-[30vw] lg:rounded-3xl rounded-xl lg:w-[15vw] w-[25vw] lg:top-96 -top-80 lg:left-[30vw] left-[30vw] z-10'>
+            <img ref={imageRef} className='h-full object-cover w-full' src="https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg" alt="" />
           <div className='lg:mt-[55vh] mt-[30vh]'>
             <h1 ref={titleRef} className='text-[20vw] text-center uppercase leading-[18vw] font-[font2]'>
               Soixan7e <br />
@@ -333,7 +369,7 @@ const Agence = () => {
         </Link>
       </div>
     </div>
-  )
-}
+  </> 
+)}
 
 export default Agence

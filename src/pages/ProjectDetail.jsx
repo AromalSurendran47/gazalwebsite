@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import { useNavigate, useParams } from 'react-router-dom'
+import { slugify } from '../utils/slugify'
 
 // Video Card Component
 const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) => {
@@ -100,7 +101,7 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
 
         {/* Title */}
         <h3 className='font-[font2] text-4xl lg:text-5xl xl:text-6xl uppercase mb-2 tracking-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75'>
-          {project.title}
+          {project.title || project.category}
         </h3>
 
         {/* Description */}
@@ -224,7 +225,7 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
             {/* Video Info */}
             <div className='absolute bottom-8 left-8 text-white'>
               <h3 className='font-[font2] text-4xl lg:text-5xl uppercase mb-2'>
-                {project.title}
+                {project.title || project.category}
               </h3>
               <p className='text-lg text-white/80'>
                 {project.description}
@@ -239,7 +240,7 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
 
 const ProjectDetail = () => {
   const navigate = useNavigate()
-  const { id } = useParams()
+  const { slug } = useParams()
   
   const heroRef = useRef(null)
   const titleRef = useRef(null)
@@ -391,19 +392,32 @@ const ProjectDetail = () => {
     }
   ]
 
-  // Filter projects based on URL parameter
-  const filteredProjects = id === '1' 
-    ? projects.filter(project => project.id === 1 || project.id === 20) // Show automotive videos for projectId 1
-    : id === '2'
-    ? projects.filter(project => project.id === 5 || project.id === 10 || project.id === 11 || project.id === 12 || project.id === 21) // Show interior and gym videos for projectId 2
-    : id === '3'
-    ? projects.filter(project => project.id === 7 || project.id === 8 || project.id === 15 || project.id === 16 || project.id === 17) // Show food reel videos for projectId 3
-    : id === '4'
-    ? projects.filter(project => project.id === 6 || project.id === 13 || project.id === 14) // Show portrait videos for projectId 4
-    : id === '5'
-    ? projects.filter(project => project.id === 2 || project.id === 18 || project.id === 19) // Show drift videos for projectId 5
-    : projects.filter(project => project.id === parseInt(id))
+  // Create slug to ID mapping
+  const slugToIdMap = {
+    'automotive': '1',
+    'fitness': '2', 
+    'food-reel': '3',
+    'potraits': '4',
+    'drift': '5'
+  }
 
+  // Convert slug to ID if needed
+  const projectId = slugToIdMap[slug] || slug
+
+  // Filter projects based on URL parameter
+  const filteredProjects = projectId === '1' 
+    ? projects.filter(project => project.id === 1 || project.id === 20) // Show automotive videos for projectId 1
+    : projectId === '2'
+    ? projects.filter(project => project.id === 5 || project.id === 10 || project.id === 11 || project.id === 12 || project.id === 21) // Show interior and gym videos for projectId 2
+    : projectId === '3'
+    ? projects.filter(project => project.id === 7 || project.id === 8 || project.id === 15 || project.id === 16 || project.id === 17) // Show food reel videos for projectId 3
+    : projectId === '4'
+    ? projects.filter(project => project.id === 6 || project.id === 13 || project.id === 14) // Show portrait videos for projectId 4
+    : projectId === '5'
+    ? projects.filter(project => project.id === 2 || project.id === 18 || project.id === 19) // Show drift videos for projectId 5
+    : projects.filter(project => project.id === parseInt(projectId))
+
+  
   gsap.registerPlugin(ScrollTrigger)
 
   // Scroll to top when component loads
