@@ -375,20 +375,27 @@ const ProjectDetail = () => {
       category: 'Fitness',
       description: ' Fitness videography'
     },
-    // {
-    //   id: 12,
-    //   title: 'Gym Hawk Zone',
-    //   video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773337084/gym_3_xlbb0g.mp4',
-    //   category: 'Fitness',
-    //   description: ' Fitness videography'
-    // }
+    {
+      id: 12,
+      title: 'Red Gym, Dubai',
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1775313822/red_gym_idf9j0.mp4',
+      category: 'Fitness',
+      description: 'Fitness videography'
+    },
+    {
+      id: 21,
+      title: 'Red Gym, Dubai',
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1775314656/reel_xakfil.mp4',
+      category: 'Fitness',
+      description: 'Fitness videography'
+    }
   ]
 
   // Filter projects based on URL parameter
   const filteredProjects = id === '1' 
     ? projects.filter(project => project.id === 1 || project.id === 20) // Show automotive videos for projectId 1
     : id === '2'
-    ? projects.filter(project => project.id === 5 || project.id === 10 || project.id === 11 || project.id === 12) // Show interior and gym videos for projectId 2
+    ? projects.filter(project => project.id === 5 || project.id === 10 || project.id === 11 || project.id === 12 || project.id === 21) // Show interior and gym videos for projectId 2
     : id === '3'
     ? projects.filter(project => project.id === 7 || project.id === 8 || project.id === 15 || project.id === 16 || project.id === 17) // Show food reel videos for projectId 3
     : id === '4'
@@ -398,6 +405,11 @@ const ProjectDetail = () => {
     : projects.filter(project => project.id === parseInt(id))
 
   gsap.registerPlugin(ScrollTrigger)
+
+  // Scroll to top when component loads
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   useGSAP(function () {
     // Hero section animation

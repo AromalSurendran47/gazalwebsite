@@ -7,12 +7,10 @@ import Services from './pages/Services'
 import ProjectDetail from './pages/ProjectDetail'
 import Navbar from './components/Navigation/Navbar'
 import FullScreenNav from './components/Navigation/FullScreenNav'
-import SEO from './components/SEO/SEO'
 
 const App = () => {
   return (
     <div className='overflow-x-hidden'>
-      <SEO />
       <Navbar />
       <FullScreenNav />
       <Routes>
