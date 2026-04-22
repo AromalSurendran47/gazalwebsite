@@ -82,7 +82,7 @@ const FullScreenNav = () => {
         >
             {/* Solid black background overlay */}
             <div className='absolute inset-0 bg-black z-10' aria-hidden='true'></div>
-            
+
             <div className='h-screen w-full fixed' aria-hidden='true'>
                 <div className='h-full w-full flex' role='presentation'>
                     <div className='stairing h-full w-1/5 bg-black lg:border-r lg:border-black' aria-hidden='true'></div>
@@ -103,12 +103,12 @@ const FullScreenNav = () => {
                         onClick={() => {
                             setNavOpen(false)
                         }}
-                        className='lg:h-16 h-10 w-16 lg:w-20 relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D3FD50] focus:ring-offset-2 focus:ring-offset-black rounded-lg'
+                        className='lg:h-16 h-10 w-16 lg:w-20 relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D3FD50] focus:ring-offset-2 focus:ring-offset-black rounded-lg group'
                         aria-label='Close navigation menu'
                         type='button'
                     >
-                        <div className='lg:h-25 h-12 lg:w-1 w-0.5 -rotate-45 absolute bg-[#D3FD50] inset-0 m-auto' aria-hidden='true'></div>
-                        <div className='lg:h-25 h-12 lg:w-1 w-0.5 right-0 rotate-45 absolute bg-[#D3FD50] inset-0 m-auto' aria-hidden='true'></div>
+                        <div className='lg:h-12 h-8 w-0.5 lg:w-1 -rotate-45 absolute bg-[#D3FD50] inset-0 m-auto group-hover:bg-white transition-colors duration-200' aria-hidden='true'></div>
+                        <div className='lg:h-12 h-8 w-0.5 lg:w-1 rotate-45 absolute bg-[#D3FD50] inset-0 m-auto group-hover:bg-white transition-colors duration-200' aria-hidden='true'></div>
                     </button>
                 </div>
                 <main className='pt-20 lg:pt-4 pb-32 lg:pb-46 px-4 lg:px-0' role='main'>
@@ -116,7 +116,7 @@ const FullScreenNav = () => {
                         <li role='listitem'>
                             <Link to='/projects' onClick={() => setNavOpen(false)} className='link origin-top relative border-t-1 border-white block focus:outline-none focus:ring-2 focus:ring-[#D3FD50] focus:ring-offset-2 focus:ring-offset-black'>
                                 <span className='font-[font2] text-3xl sm:text-4xl md:text-5xl lg:text-[8vw] text-center lg:leading-[0.8] leading-tight lg:pt-10 pt-6 pb-4 lg:pb-0 uppercase block'>Projects</span>
-                                <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
+                                <div className='moveLink absolute left-0 h-full w-full overflow-hidden text-black flex top-0 bg-[#D3FD50]'>
                                     <div className='moveX flex items-center'>
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
                                         <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
@@ -135,7 +135,7 @@ const FullScreenNav = () => {
                         <li role='listitem'>
                             <Link to='/services' onClick={() => setNavOpen(false)} className='link origin-top relative border-t-1 border-white block focus:outline-none focus:ring-2 focus:ring-[#D3FD50] focus:ring-offset-2 focus:ring-offset-black'>
                                 <span className='font-[font2] text-3xl sm:text-4xl md:text-5xl lg:text-[8vw] text-center lg:leading-[0.8] leading-tight lg:pt-10 pt-6 pb-4 lg:pb-0 uppercase block'>Services</span>
-                                <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
+                                <div className='moveLink absolute left-0 h-full w-full overflow-hidden text-black flex top-0 bg-[#D3FD50]'>
                                     <div className='moveX flex items-center'>
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
                                         <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
@@ -154,7 +154,7 @@ const FullScreenNav = () => {
                         <li role='listitem'>
                             <Link to='/contact' onClick={() => setNavOpen(false)} className='link origin-top relative border-t-1 border-white block focus:outline-none focus:ring-2 focus:ring-[#D3FD50] focus:ring-offset-2 focus:ring-offset-black'>
                                 <span className='font-[font2] text-3xl sm:text-4xl md:text-5xl lg:text-[8vw] text-center lg:leading-[0.8] leading-tight lg:pt-10 pt-6 pb-4 lg:pb-0 uppercase block'>Contact</span>
-                                <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
+                                <div className='moveLink absolute left-0 h-full w-full overflow-hidden text-black flex top-0 bg-[#D3FD50]'>
                                     <div className='moveX flex items-center'>
                                         <h2 className='whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-10 pt-4 uppercase'>To See Everything</h2>
                                         <img className='lg:h-44 h-16 rounded-full shrink-0 lg:w-[28rem] w-40 object-cover' src={frontImage} alt="" />
