@@ -5,45 +5,107 @@
   <!-- Homepage -->
   <url>
     <loc>https://metisprimeproduction.com/</loc>
-    <lastmod>2024-03-28</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://metisprimeproduction.com/logo-main.PNG</image:loc>
       <image:title>Metis Prime Production Logo</image:title>
+      <image:caption>Creative Digital Production Agency Dubai</image:caption>
     </image:image>
   </url>
 
   <!-- Services Page -->
   <url>
     <loc>https://metisprimeproduction.com/services</loc>
-    <lastmod>2024-03-28</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 
   <!-- Projects Page -->
   <url>
     <loc>https://metisprimeproduction.com/projects</loc>
-    <lastmod>2024-03-28</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- Project Detail Pages with Slugs -->
+  <url>
+    <loc>https://metisprimeproduction.com/project/automotive</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dr47btnx9/video/upload/v1773339105/AUTOMOTIVE_dj5f0c.jpg</image:loc>
+      <image:title>Automotive Cinematography</image:title>
+      <image:caption>High-octane automotive cinematography by Metis Prime Production</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://metisprimeproduction.com/project/fitness</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dr47btnx9/video/upload/v1774721957/fitness_display_eh17dl.jpg</image:loc>
+      <image:title>Fitness Video Production</image:title>
+      <image:caption>Fitness journey showcase by Metis Prime Production</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://metisprimeproduction.com/project/food-reel</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dr47btnx9/video/upload/v1773336858/food_reel_post_wkwjpq.jpg</image:loc>
+      <image:title>Food Videography</image:title>
+      <image:caption>Culinary visual storytelling by Metis Prime Production</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://metisprimeproduction.com/project/potraits</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dr47btnx9/video/upload/v1773336855/potraits_r2mmme.jpg</image:loc>
+      <image:title>Perfume Branding</image:title>
+      <image:caption>Capturing human essence in perfume branding</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://metisprimeproduction.com/project/drift</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dr47btnx9/video/upload/v1774799665/event_1_wxvyin.jpg</image:loc>
+      <image:title>Drift Cinematography</image:title>
+      <image:caption>Adrenaline-fueled drifting action by Metis Prime Production</image:caption>
+    </image:image>
   </url>
 
   <!-- Contact Page -->
   <url>
     <loc>https://metisprimeproduction.com/contact</loc>
-    <lastmod>2024-03-28</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <!-- Agency Page -->
   <url>
     <loc>https://metisprimeproduction.com/agence</loc>
-    <lastmod>2024-03-28</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
 </urlset>

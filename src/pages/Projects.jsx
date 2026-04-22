@@ -4,6 +4,8 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import SEO from '../components/SEO/SEO'
+import { slugify } from '../utils/slugify'
 
 const Projects = () => {
   const navigate = useNavigate()
@@ -34,7 +36,7 @@ const Projects = () => {
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336855/potraits_r2mmme.mp4',
       video2: '',
       projectId: 4,
-      title1: 'Perfume',
+      title1: 'Potraits',
       description1: 'Capturing human essence',
       title2: '',
       description2: ''
@@ -44,7 +46,7 @@ const Projects = () => {
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774721957/fitness_display_eh17dl.mp4',
       video2: '',
       projectId: 2,
-      title1: 'Gym Hawk Zone',
+      title1: 'Fitness',
       description1: 'Fitness journey showcase',
       title2: '',
       description2: ''
@@ -125,12 +127,64 @@ const Projects = () => {
   })
 
   return (
-    <div className='min-h-screen bg-black text-white font-[font1] overflow-hidden'>
-      {/* Hero Section */}
-      <div className='relative pt-16 sm:pt-20 md:pt-24 lg:pt-32 xl:pt-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-24 px-3 sm:px-5 md:px-8 lg:px-12'>
-        {/* Back Button */}
-        {/* <button
-          onClick={() => navigate('/')}
+    <>
+      <SEO 
+        title="Projects - Creative Visual Production Portfolio | Metis Prime Production"
+        description="Explore our creative portfolio featuring automotive cinematography, food videography, fitness content, perfume branding, and drift videos. Dubai's premier visual production agency."
+        keywords="Metis Prime Production projects, creative portfolio Dubai, automotive videography, food videography, fitness video production, perfume branding, drift videos, visual production UAE, cinematic content"
+        canonicalUrl="https://metisprimeproduction.com/projects"
+        ogUrl="https://metisprimeproduction.com/projects"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Projects Portfolio",
+          "description": "Explore our creative portfolio featuring automotive cinematography, food videography, fitness content, perfume branding, and drift videos.",
+          "url": "https://metisprimeproduction.com/projects",
+          "provider": {
+            "@type": "Organization",
+            "name": "Metis Prime Production",
+            "url": "https://metisprimeproduction.com",
+            "logo": "https://metisprimeproduction.com/logo-main.PNG"
+          },
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "CreativeWork",
+                "name": "Automotive",
+                "description": "High-octane automotive cinematography"
+              },
+              {
+                "@type": "CreativeWork", 
+                "name": "Food Reel",
+                "description": "Culinary visual storytelling"
+              },
+              {
+                "@type": "CreativeWork",
+                "name": "Perfume",
+                "description": "Capturing human essence"
+              },
+              {
+                "@type": "CreativeWork",
+                "name": "Gym Hawk Zone", 
+                "description": "Fitness journey showcase"
+              },
+              {
+                "@type": "CreativeWork",
+                "name": "Drift",
+                "description": "Adrenaline-fueled drifting action"
+              }
+            ]
+          }
+        }}
+      />
+      <div className='min-h-screen bg-black text-white font-[font1] overflow-hidden'>
+        {/* Hero Section */}
+        <div className='relative pt-27 sm:pt-20 md:pt-24 lg:pt-32 xl:pt-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-24 px-3 sm:px-5 md:px-8 lg:px-12'>
+          {/* Back Button */}
+          {/* <button
+            onClick={() => navigate('/')}
+            className='absolute top-4 sm:top-6 left-4 sm:left-5 md:left-8 lg:left-12 z-20 flex items-center gap-2 text-white/80 hover:text-white transition-colors group'
           className='absolute top-4 sm:top-6 left-4 sm:left-5 md:left-8 lg:left-12 z-20 flex items-center gap-2 text-white/80 hover:text-white transition-colors group'
         >
           <svg
@@ -177,6 +231,7 @@ const Projects = () => {
                 video1={project.video1} 
                 video2={project.video2} 
                 projectId={project.projectId}
+                slug={slugify(project.title1)}
                 title1={project.title1}
                 title2={project.title2}
                 description1={project.description1}
@@ -199,6 +254,7 @@ const Projects = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

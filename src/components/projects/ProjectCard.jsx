@@ -19,7 +19,7 @@ const ProjectCard = (props) => {
     }, [])
     
     const handleClick = () => {
-        navigate(`/project/${props.projectId || '1'}`)
+        navigate(`/project/${props.slug || props.projectId || '1'}`)
     }
 
     const handleTouchStart = (videoRef) => {

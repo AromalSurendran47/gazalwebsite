@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import { useNavigate, useParams } from 'react-router-dom'
+import { slugify } from '../utils/slugify'
 
 // Video Card Component
 const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) => {
@@ -11,9 +12,21 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
   const fullScreenVideoRef = useRef(null)
   const [isFullScreen, setIsFullScreen] = useState(false)
   const [seekProgress, setSeekProgress] = useState(0)
-  const [showControls, setShowControls] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
+  const [showControls, setShowControls] = useState(false)
   const [isPlaying, setIsPlaying] = useState(true)
   const [isMuted, setIsMuted] = useState(true)
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+    }
+
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const handleVideoClick = () => {
     setIsFullScreen(true)
@@ -61,15 +74,15 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
         ref={cardRef}
         className='video-card group relative bg-[#0a0a0a] cursor-pointer p-2 sm:p-3 rounded-2xl border border-white/10 hover:border-[#D3FD50]/40 transition-colors duration-500'
         style={{ aspectRatio: '16/10' }}
-        onMouseEnter={() => handleVideoMouseEnter(videoRef, cardRef, project.id)}
-        onMouseLeave={() => handleVideoMouseLeave(videoRef, cardRef)}
+        onMouseEnter={() => !isMobile && handleVideoMouseEnter(videoRef, cardRef, project.id)}
+        onMouseLeave={() => !isMobile && handleVideoMouseLeave(videoRef, cardRef)}
         onClick={handleVideoClick}
       >
-        <div className='relative w-full h-full rounded-xl overflow-hidden'>
-          {/* Video */}
+        {/* Video on desktop, Image on mobile */}
+        {!isMobile ? (
           <video
             ref={videoRef}
-            className='absolute inset-0 h-full w-full object-cover'
+            className='h-full w-full object-cover'
             loop
             muted
             playsInline
@@ -77,220 +90,130 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
           >
             <source src={project.video} type='video/mp4' />
           </video>
+        ) : (
+          <img
+            src={project.video.replace('.mp4', '.jpg')}
+            alt={project.description || 'Project'}
+            className='h-full w-full object-cover'
+            loading='lazy'
+            onError={(e) => {
+              e.target.src = `https://picsum.photos/seed/fallback${project.id}/800/500.jpg`;
+            }}
+          />
+        )}
 
-          {/* Play Center Icon */}
-          <div className='absolute inset-0 flex items-center justify-center z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-500 scale-95 group-hover:scale-100'>
-            <div className='w-16 h-16 lg:w-20 lg:h-20 rounded-full border border-white/40 bg-black/30 backdrop-blur-md flex items-center justify-center text-white group-hover:text-[#D3FD50] group-hover:border-[#D3FD50] transition-colors duration-500'>
-              <svg className='w-6 h-6 lg:w-8 lg:h-8 ml-1' fill='currentColor' viewBox='0 0 24 24'>
-                <path d='M8 5v14l11-7z' />
-              </svg>
-            </div>
+        {/* Gradient Overlay */}
+        <div className='absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500 z-10'></div>
+
+        {/* Content Overlay */}
+        <div className='absolute inset-0 flex flex-col justify-end p-5 lg:p-8 text-white z-20 pointer-events-none'>
+          {/* Category Badge */}
+          <div className='mb-3 lg:mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500'>
+            <span className='inline-block text-[10px] lg:text-xs uppercase tracking-[0.3em] px-3 py-1.5 lg:px-4 lg:py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full'>
+              {project.category}
+            </span>
           </div>
 
-          {/* Gradient Overlay */}
-          <div className='absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500 z-10'></div>
+          {/* Title */}
+          <h3 className='font-[font2] text-4xl lg:text-5xl xl:text-6xl uppercase mb-2 tracking-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75'>
+            {project.title || project.category}
+          </h3>
 
-          {/* Content Overlay */}
-          <div className='absolute inset-0 flex flex-col justify-end p-5 lg:p-8 text-white z-20 pointer-events-none'>
-            {/* Category Badge */}
-            <div className='mb-3 lg:mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500'>
-              <span className='inline-block text-[10px] lg:text-xs uppercase tracking-[0.3em] px-3 py-1.5 lg:px-4 lg:py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full'>
-                {project.category}
-              </span>
-            </div>
+          {/* Description */}
+          <p className='text-xs lg:text-sm text-white/80 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100 line-clamp-2 pt-2'>
+            {project.description}
+          </p>
 
-            {/* Title */}
-            <h3 className='font-[font2] text-3xl lg:text-5xl xl:text-6xl uppercase mb-1 lg:mb-2 tracking-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75'>
-              {project.title}
-            </h3>
-
-            {/* Description */}
-            <p className='text-xs lg:text-sm text-white/80 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100 line-clamp-2 pt-2'>
-              {project.description}
-            </p>
-
-            {/* View Indicator */}
-            <div className='mt-4 lg:mt-6 flex items-center gap-2 lg:gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150 text-[#D3FD50]'>
-              <span className='text-[10px] lg:text-xs uppercase tracking-wider font-semibold'>Play Video</span>
-              <svg
-                className='w-4 h-4 lg:w-5 lg:h-5 transform group-hover:translate-x-2 transition-transform duration-300'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M17 8l4 4m0 0l-4 4m4-4H3'
-                />
-              </svg>
-            </div>
+          {/* View Indicator */}
+          <div className='mt-4 lg:mt-6 flex items-center gap-2 lg:gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150 text-[#D3FD50]'>
+            <span className='text-[10px] lg:text-xs uppercase tracking-wider font-semibold'>Play Video</span>
+            <svg
+              className='w-4 h-4 lg:w-5 lg:h-5 transform group-hover:translate-x-2 transition-transform duration-300'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M17 8l4 4m0 0l-4 4m4-4H3'
+              />
+            </svg>
           </div>
         </div>
       </div>
 
       {/* Scrollable, Full-Size Beautiful Project Modal */}
-      {isFullScreen && (
-        <div 
-          className='fixed inset-0 z-[100] bg-black/95 backdrop-blur-3xl overflow-y-auto transition-opacity duration-500'
-          onClick={handleCloseFullScreen}
-        >
-          {/* Fixed Floating Close Button */}
-          <button 
+      {
+        isFullScreen && (
+          <div
+            className='fixed inset-0 z-[100] bg-black/95 backdrop-blur-3xl overflow-y-auto transition-opacity duration-500'
             onClick={handleCloseFullScreen}
-            className='fixed top-6 right-6 lg:top-10 lg:right-10 z-[120] p-4 bg-white/10 hover:bg-[#D3FD50] border border-white/20 rounded-full text-white hover:text-black transition-all duration-300 transform hover:rotate-90 hover:scale-110 shadow-[0_0_30px_rgba(0,0,0,0.5)]'
           >
-            <svg className='w-6 h-6 lg:w-8 lg:h-8' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M6 18L18 6M6 6l12 12' />
-            </svg>
-          </button>
+            {/* Fixed Floating Close Button */}
+            <button
+              onClick={handleCloseFullScreen}
+              className='fixed top-6 right-6 lg:top-10 lg:right-10 z-[120] p-4 bg-white/10 hover:bg-[#D3FD50] border border-white/20 rounded-full text-white hover:text-black transition-all duration-300 transform hover:rotate-90 hover:scale-110 shadow-[0_0_30px_rgba(0,0,0,0.5)]'
+            >
+              <svg className='w-6 h-6 lg:w-8 lg:h-8' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M6 18L18 6M6 6l12 12' />
+              </svg>
+            </button>
 
-          {/* Modal Inner Scroll Container - Designed for auto-centering and safe scrolling */}
-          <div className='flex flex-col min-h-[100vh] w-full pt-20 pb-24 sm:py-24 px-0 sm:px-6 lg:px-12 relative'>
-            <div className='m-auto w-full max-w-[1200px] flex flex-col'>
-              
-              {/* Project Header Container */}
-              <div className='w-full px-6 sm:px-0 mb-6 lg:mb-12 text-left' onClick={(e) => e.stopPropagation()}>
-                 <span className='inline-block text-[#D3FD50] text-[10px] lg:text-sm uppercase tracking-[0.3em] font-bold px-4 py-2 bg-[#D3FD50]/10 rounded-full mb-4 border border-[#D3FD50]/20'>
-                   {project.category}
-                 </span>
-                 <h2 className='font-[font2] text-4xl sm:text-5xl lg:text-7xl xl:text-8xl uppercase tracking-tight text-white mb-4 drop-shadow-2xl'>
-                   {project.title}
-                 </h2>
-                 <p className='text-sm sm:text-base lg:text-xl text-white/70 font-[font1] max-w-3xl leading-relaxed'>
-                   {project.description}
-                 </p>
+            {/* Modal Inner Scroll Container - Designed for auto-centering and safe scrolling */}
+            <div className='flex flex-col min-h-[100vh] w-full pt-20 pb-24 sm:py-24 px-0 sm:px-6 lg:px-12 relative'>
+              <div className='m-auto w-full max-w-[1200px] flex flex-col'>
+
+                {/* Project Header Container */}
+                <div className='w-full px-6 sm:px-0 mb-6 lg:mb-12 text-left' onClick={(e) => e.stopPropagation()}>
+                  <span className='inline-block text-[#D3FD50] text-[10px] lg:text-sm uppercase tracking-[0.3em] font-bold px-4 py-2 bg-[#D3FD50]/10 rounded-full mb-4 border border-[#D3FD50]/20'>
+                    {project.category}
+                  </span>
+                  <h2 className='font-[font2] text-4xl sm:text-5xl lg:text-7xl xl:text-8xl uppercase tracking-tight text-white mb-4 drop-shadow-2xl'>
+                    {project.title}
+                  </h2>
+                  <p className='text-sm sm:text-base lg:text-xl text-white/70 font-[font1] max-w-3xl leading-relaxed'>
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Main Video Container */}
+
               </div>
 
-              {/* Main Video Container */}
-              <div 
-                className='relative w-full rounded-none sm:rounded-3xl lg:rounded-[2.5rem] overflow-hidden shadow-[0_20px_100px_rgba(211,253,80,0.1)] border-y sm:border border-white/10 bg-[#050505] group'
-                onClick={(e) => e.stopPropagation()}
-                onMouseEnter={() => setShowControls(true)}
-                onMouseLeave={() => setShowControls(false)}
+              {/* Full Screen Video */}
+              <video
+                ref={fullScreenVideoRef}
+                className='max-w-full max-h-full object-contain'
+                autoPlay
+                loop
+                muted
+                playsInline
               >
-                <video
-                  ref={fullScreenVideoRef}
-                  className='w-full h-auto object-contain mx-auto'
-                  autoPlay
-                  loop
-                  muted={isMuted}
-                  playsInline
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (fullScreenVideoRef.current) {
-                      if (fullScreenVideoRef.current.paused) {
-                        fullScreenVideoRef.current.play();
-                        setIsPlaying(true);
-                      } else {
-                        fullScreenVideoRef.current.pause();
-                        setIsPlaying(false);
-                      }
-                    }
-                  }}
-                  onPlay={() => setIsPlaying(true)}
-                  onPause={() => setIsPlaying(false)}
-                >
-                  <source src={project.video} type='video/mp4' />
-                </video>
-                
-                {/* Center Play/Pause Indicator (Fades out) */}
-                {!isPlaying && (
-                  <div className='absolute inset-0 flex items-center justify-center pointer-events-none z-20'>
-                    <div className='w-20 h-20 sm:w-28 sm:h-28 bg-black/50 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-center text-white scale-100 transition-transform duration-300 shadow-2xl'>
-                      <svg className='w-10 h-10 sm:w-14 sm:h-14 ml-2' fill='currentColor' viewBox='0 0 24 24'>
-                        <path d='M8 5v14l11-7z' />
-                      </svg>
-                    </div>
-                  </div>
-                )}
+                <source src={project.video} type='video/mp4' />
+              </video>
 
-                {/* Hover Gradient & Controls */}
-                <div className={`absolute bottom-0 left-0 right-0 p-6 lg:p-10 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-all duration-500 z-30 ${showControls || !isPlaying ? 'opacity-100 translate-y-0' : 'opacity-100 sm:opacity-0 sm:translate-y-8'}`}>
-                  
-                  {/* Progress Bar Area */}
-                  <div className='w-full px-2 sm:px-4 lg:px-8 mb-6'>
-                     <div className='relative w-full h-2 lg:h-3 bg-white/20 rounded-full overflow-hidden cursor-pointer group/slider' 
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            if (fullScreenVideoRef.current) {
-                              const rect = e.currentTarget.getBoundingClientRect();
-                              const percent = (e.clientX - rect.left) / rect.width;
-                              fullScreenVideoRef.current.currentTime = percent * fullScreenVideoRef.current.duration;
-                            }
-                          }}>
-                        <div className='absolute top-0 left-0 h-full bg-[#D3FD50] rounded-full shadow-[0_0_15px_rgba(211,253,80,0.8)] transition-all ease-linear' style={{ width: `${seekProgress}%` }}></div>
-                     </div>
-                  </div>
-
-                  {/* Controls Bar */}
-                  <div className='flex items-center justify-between w-full px-2 sm:px-4 lg:px-8'>
-                    <div className='flex items-center gap-6'>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          if (fullScreenVideoRef.current) {
-                            if (isPlaying) {
-                              fullScreenVideoRef.current.pause()
-                            } else {
-                              fullScreenVideoRef.current.play()
-                            }
-                          }
-                        }}
-                        className='w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-full bg-white text-black hover:bg-[#D3FD50] hover:scale-110 transition-all duration-300 shadow-xl'
-                      >
-                        {isPlaying ? (
-                          <svg className='w-6 h-6 sm:w-7 sm:h-7' fill='currentColor' viewBox='0 0 24 24'>
-                            <path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z'/>
-                          </svg>
-                        ) : (
-                          <svg className='w-6 h-6 sm:w-7 sm:h-7 ml-1' fill='currentColor' viewBox='0 0 24 24'>
-                            <path d='M8 5v14l11-7z' />
-                          </svg>
-                        )}
-                      </button>
-                      
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          setIsMuted(!isMuted)
-                          if (fullScreenVideoRef.current) {
-                            fullScreenVideoRef.current.muted = !isMuted
-                          }
-                        }}
-                        className='text-white hover:text-[#D3FD50] transition-colors duration-300'
-                      >
-                        {isMuted ? (
-                          <svg className='w-8 h-8 sm:w-10 sm:h-10' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z m10-4.071l4.07-4.07m0 8.142l-4.07-4.071' />
-                          </svg>
-                        ) : (
-                          <svg className='w-8 h-8 sm:w-10 sm:h-10' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z' />
-                          </svg>
-                        )}
-                      </button>
-                    </div>
-                    
-                    {/* Subtle Indicator */}
-                    <span className='text-xs sm:text-sm text-white/50 uppercase tracking-widest font-[font1] hidden sm:block'>
-                      Full Screen Playback
-                    </span>
-                  </div>
-                </div>
+              {/* Video Info */}
+              <div className='absolute bottom-8 left-8 text-white'>
+                <h3 className='font-[font2] text-4xl lg:text-5xl uppercase mb-2'>
+                  {project.title || project.category}
+                </h3>
+                <p className='text-lg text-white/80'>
+                  {project.description}
+                </p>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )
+      }
     </>
   )
 }
 
 const ProjectDetail = () => {
   const navigate = useNavigate()
-  const { id } = useParams()
+  const { slug } = useParams()
 
   const heroRef = useRef(null)
   const titleRef = useRef(null)
@@ -313,7 +236,7 @@ const ProjectDetail = () => {
         });
       }, 300);
     }
-  }, [id]);
+  }, [slug]);
 
   const projects = [
     {
@@ -442,29 +365,54 @@ const ProjectDetail = () => {
       category: 'Fitness',
       description: ' Fitness videography'
     },
-    // {
-    //   id: 12,
-    //   title: 'Gym Hawk Zone',
-    //   video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773337084/gym_3_xlbb0g.mp4',
-    //   category: 'Fitness',
-    //   description: ' Fitness videography'
-    // }
+    {
+      id: 12,
+      title: 'Red Gym, Dubai',
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1775313822/red_gym_idf9j0.mp4',
+      category: 'Fitness',
+      description: 'Fitness videography'
+    },
+    {
+      id: 21,
+      title: 'Red Gym, Dubai',
+      video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1775314656/reel_xakfil.mp4',
+      category: 'Fitness',
+      description: 'Fitness videography'
+    }
   ]
 
+  // Create slug to ID mapping
+  const slugToIdMap = {
+    'automotive': '1',
+    'fitness': '2',
+    'food-reel': '3',
+    'potraits': '4',
+    'drift': '5'
+  }
+
+  // Convert slug to ID if needed
+  const projectId = slugToIdMap[slug] || slug
+
   // Filter projects based on URL parameter
-  const filteredProjects = id === '1'
+  const filteredProjects = projectId === '1'
     ? projects.filter(project => project.id === 1 || project.id === 20) // Show automotive videos for projectId 1
-    : id === '2'
-      ? projects.filter(project => project.id === 5 || project.id === 10 || project.id === 11 || project.id === 12) // Show interior and gym videos for projectId 2
-      : id === '3'
+    : projectId === '2'
+      ? projects.filter(project => project.id === 5 || project.id === 10 || project.id === 11 || project.id === 12 || project.id === 21) // Show interior and gym videos for projectId 2
+      : projectId === '3'
         ? projects.filter(project => project.id === 7 || project.id === 8 || project.id === 15 || project.id === 16 || project.id === 17) // Show food reel videos for projectId 3
-        : id === '4'
+        : projectId === '4'
           ? projects.filter(project => project.id === 6 || project.id === 13 || project.id === 14) // Show portrait videos for projectId 4
-          : id === '5'
+          : projectId === '5'
             ? projects.filter(project => project.id === 2 || project.id === 18 || project.id === 19) // Show drift videos for projectId 5
-            : projects.filter(project => project.id === parseInt(id))
+            : projects.filter(project => project.id === parseInt(projectId))
+
 
   gsap.registerPlugin(ScrollTrigger)
+
+  // Scroll to top when component loads
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   useGSAP(function () {
     // Hero section animation
@@ -548,6 +496,11 @@ const ProjectDetail = () => {
   })
 
   const handleVideoMouseEnter = (videoRef, cardRef, projectId) => {
+    // Don't play videos on mobile
+    if (window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      return
+    }
+
     if (videoRef.current) {
       videoRef.current.play().catch(() => { })
     }
@@ -561,6 +514,11 @@ const ProjectDetail = () => {
   }
 
   const handleVideoMouseLeave = (videoRef, cardRef) => {
+    // Don't handle videos on mobile
+    if (window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      return
+    }
+
     if (videoRef.current) {
       videoRef.current.pause()
       videoRef.current.currentTime = 0
@@ -577,7 +535,7 @@ const ProjectDetail = () => {
   return (
     <div className='min-h-screen bg-black text-white font-[font1] overflow-hidden'>
       {/* Header Section */}
-      <div className='relative pt-32 lg:pt-40 pb-20 px-5 lg:px-12'>
+      <div className='relative pt-20 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 pb-20 px-5 lg:px-12'>
         <div className='max-w-[1800px] mx-auto'>
           {/* Back Button */}
           <div
