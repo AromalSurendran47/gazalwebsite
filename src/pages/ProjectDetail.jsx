@@ -13,6 +13,9 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
   const [isFullScreen, setIsFullScreen] = useState(false)
   const [seekProgress, setSeekProgress] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
+  const [isVideoPlaying, setIsVideoPlaying] = useState(true)
+  const [showIcon, setShowIcon] = useState(true)
+  const iconTimerRef = useRef(null)
   
   // Detect mobile device
   useEffect(() => {
@@ -27,11 +30,39 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
 
   const handleVideoClick = () => {
     setIsFullScreen(true)
+    // Scroll to top when video opens
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const handleCloseFullScreen = () => {
     setIsFullScreen(false)
     setSeekProgress(0)
+    // Clear any existing timer
+    if (iconTimerRef.current) {
+      clearTimeout(iconTimerRef.current)
+    }
+  }
+
+  // Function to hide icon after 2 seconds (for play)
+  const hideIconAfterDelay = () => {
+    if (iconTimerRef.current) {
+      clearTimeout(iconTimerRef.current)
+    }
+    setShowIcon(true)
+    iconTimerRef.current = setTimeout(() => {
+      setShowIcon(false)
+    }, 2000)
+  }
+
+  // Function to hide icon after 1 second (for pause)
+  const hideIconAfterPause = () => {
+    if (iconTimerRef.current) {
+      clearTimeout(iconTimerRef.current)
+    }
+    setShowIcon(true)
+    iconTimerRef.current = setTimeout(() => {
+      setShowIcon(false)
+    }, 1000)
   }
 
   // Update seek bar as video plays
@@ -47,11 +78,23 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
 
       video.addEventListener('timeupdate', updateProgress)
       
+      // Don't show icon when video initially loads and starts playing
+      setShowIcon(false)
+      
       return () => {
         video.removeEventListener('timeupdate', updateProgress)
       }
     }
   }, [isFullScreen])
+
+  // Cleanup timer on unmount
+  useEffect(() => {
+    return () => {
+      if (iconTimerRef.current) {
+        clearTimeout(iconTimerRef.current)
+      }
+    }
+  }, [])
 
   return (
     <>
@@ -135,16 +178,16 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
       {/* Full Screen Modal */}
       {isFullScreen && (
         <div 
-          className='fixed inset-0 z-50 bg-black bg-opacity-95 flex items-center justify-center'
+          className='fixed inset-0 z-50 bg-black bg-opacity-95 flex items-start justify-center pt-16'
           onClick={handleCloseFullScreen}
         >
-          <div className='relative w-full h-full flex items-center justify-center'>
+          <div className='relative flex items-center justify-center p-2 sm:p-4 md:p-8 pb-20 sm:pb-24 md:pb-32 h-[60vh] sm:h-[70vh] md:h-[75vh]' style={{ maxWidth: '100vw', width: '100%', aspectRatio: '16/9' }}>
             {/* Back Button */}
             <button
               onClick={handleCloseFullScreen}
-              className='absolute top-8 left-8 z-50 text-white hover:text-[#D3FD50] transition-colors duration-300 flex items-center gap-3'
+              className='absolute top-2 left-2 sm:top-4 sm:left-4 md:top-8 md:left-8 z-50 text-white hover:text-[#D3FD50] transition-colors duration-300 flex items-center gap-2 sm:gap-3'
             >
-              <svg className='w-8 h-8' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+              <svg className='w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                 <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 19l-7-7 7-7' />
               </svg>
               <span className='text-sm lg:text-base uppercase tracking-wider font-[font1]'>Back</span>
@@ -153,15 +196,15 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
             {/* Close Button */}
             <button
               onClick={handleCloseFullScreen}
-              className='absolute top-8 right-8 z-50 text-white hover:text-[#D3FD50] transition-colors duration-300'
+              className='absolute top-2 right-2 sm:top-4 sm:right-4 md:top-8 md:right-8 z-50 text-white hover:text-[#D3FD50] transition-colors duration-300'
             >
-              <svg className='w-12 h-12' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+              <svg className='w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                 <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
               </svg>
             </button>
             
-            {/* Custom Control Bar */}
-            <div className='absolute top-24 left-1/2 transform -translate-x-1/2 z-40 bg-black/50 backdrop-blur-sm rounded-lg px-6 py-3'>
+            {/* Custom Control Bar - Commented Out */}
+            {/* <div className='absolute top-12 sm:top-16 md:top-24 left-1/2 transform -translate-x-1/2 z-40 bg-black/50 backdrop-blur-sm rounded-lg px-3 sm:px-4 md:px-6 py-2 sm:py-3'>
               <div className='flex items-center gap-4'>
                 <button
                   onClick={(e) => {
@@ -176,7 +219,7 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
                   }}
                   className='text-white hover:text-[#D3FD50] transition-colors duration-300'
                 >
-                  <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <svg className='w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z' />
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M21 12a9 9 0 11-18 0 9 9 0 0118 0z' />
                   </svg>
@@ -186,7 +229,7 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
                   min="0"
                   max="100"
                   value={seekProgress}
-                  className='w-32 h-1 bg-white/30 rounded-lg appearance-none cursor-pointer slider'
+                  className='w-16 sm:w-24 md:w-32 h-1 bg-white/30 rounded-lg appearance-none cursor-pointer slider'
                   onChange={(e) => {
                     if (fullScreenVideoRef.current) {
                       fullScreenVideoRef.current.currentTime = (e.target.value / 100) * fullScreenVideoRef.current.duration
@@ -203,31 +246,59 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
                   }}
                   className='text-white hover:text-[#D3FD50] transition-colors duration-300'
                 >
-                  <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <svg className='w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z' />
                   </svg>
                 </button>
               </div>
-            </div>
+            </div> */}
 
             {/* Full Screen Video */}
             <video
               ref={fullScreenVideoRef}
-              className='max-w-full max-h-full object-contain'
+              className='w-full h-full object-contain cursor-pointer'
               autoPlay
               loop
-              muted
               playsInline
+              onClick={(e) => {
+                e.stopPropagation()
+                if (fullScreenVideoRef.current) {
+                  if (fullScreenVideoRef.current.paused) {
+                    fullScreenVideoRef.current.play()
+                    setIsVideoPlaying(true)
+                    setShowIcon(false) // Hide icon when playing
+                  } else {
+                    fullScreenVideoRef.current.pause()
+                    setIsVideoPlaying(false)
+                    hideIconAfterPause() // Show pause icon for 1 second
+                  }
+                }
+              }}
             >
               <source src={project.video} type='video/mp4' />
             </video>
+
+            {/* Play/Pause Icon Overlay */}
+            <div className='absolute inset-0 flex items-center justify-center pointer-events-none'>
+              <div className={`bg-black/60 backdrop-blur-sm rounded-full p-6 transition-all duration-300 ${showIcon ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
+                {!isVideoPlaying ? (
+                  <svg className='w-12 h-12 sm:w-16 sm:h-16 text-white' fill='currentColor' viewBox='0 0 24 24'>
+                    <path d='M8 5v14l11-7z'/>
+                  </svg>
+                ) : (
+                  <svg className='w-12 h-12 sm:w-16 sm:h-16 text-white' fill='currentColor' viewBox='0 0 24 24'>
+                    <path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z'/>
+                  </svg>
+                )}
+              </div>
+            </div>
             
             {/* Video Info */}
-            <div className='absolute bottom-8 left-8 text-white'>
-              <h3 className='font-[font2] text-4xl lg:text-5xl uppercase mb-2'>
+            <div className='absolute bottom-4 sm:bottom-6 md:bottom-8 left-4 sm:left-6 md:left-8 text-white z-50'>
+              <h3 className='font-[font2] text-lg sm:text-xl md:text-2xl lg:text-4xl uppercase mb-1'>
                 {project.title || project.category}
               </h3>
-              <p className='text-lg text-white/80'>
+              <p className='text-xs sm:text-sm md:text-base text-white/80'>
                 {project.description}
               </p>
             </div>
