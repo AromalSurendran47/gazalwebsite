@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/all'
 import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import SEO from '../components/SEO/SEO'
+import { slugify } from '../utils/slugify'
 
 const Projects = () => {
   const navigate = useNavigate()
@@ -35,7 +36,7 @@ const Projects = () => {
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336855/potraits_r2mmme.mp4',
       video2: '',
       projectId: 4,
-      title1: 'Perfume',
+      title1: 'Potraits',
       description1: 'Capturing human essence',
       title2: '',
       description2: ''
@@ -45,7 +46,7 @@ const Projects = () => {
       video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774721957/fitness_display_eh17dl.mp4',
       video2: '',
       projectId: 2,
-      title1: 'Gym Hawk Zone',
+      title1: 'Fitness',
       description1: 'Fitness journey showcase',
       title2: '',
       description2: ''
@@ -230,6 +231,7 @@ const Projects = () => {
                 video1={project.video1} 
                 video2={project.video2} 
                 projectId={project.projectId}
+                slug={slugify(project.title1)}
                 title1={project.title1}
                 title2={project.title2}
                 description1={project.description1}
