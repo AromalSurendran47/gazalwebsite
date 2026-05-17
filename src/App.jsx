@@ -7,12 +7,14 @@ import Services from './pages/Services'
 import ProjectDetail from './pages/ProjectDetail'
 import Navbar from './components/Navigation/Navbar'
 import FullScreenNav from './components/Navigation/FullScreenNav'
+import MobileNav from './components/Navigation/MobileNav'
 
 const App = () => {
   return (
     <div className='overflow-x-hidden'>
       <Navbar />
       <FullScreenNav />
+      <MobileNav />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/agence' element={<Agence />} />

@@ -15,7 +15,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='z-40 flex fixed top-0 left-0 w-full items-start justify-between'>
+        <div className='z-40 hidden lg:flex fixed top-0 left-0 w-full items-start justify-between'>
             <div className='lg:p-5 p-2 '>
                 <div 
                     onClick={handleLogoClick}
