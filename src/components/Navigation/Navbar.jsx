@@ -34,7 +34,7 @@ const Navbar = () => {
                     <img
                         src={logoMain}
                         alt='Metis Prime'
-                        className='w-16 h-16 xl:w-20 xl:h-20 object-contain'
+                        className='w-14 h-14 xl:w-16 xl:h-16 object-contain'
                     />
                     <span className='font-[font2] uppercase tracking-[0.32em] text-sm xl:text-base text-white/90 group-hover:text-[#D3FD50] transition-colors'>
                         Metis Prime

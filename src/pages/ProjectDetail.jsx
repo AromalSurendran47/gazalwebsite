@@ -181,7 +181,7 @@ const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) =>
           className='fixed inset-0 z-50 bg-black bg-opacity-95 flex items-start justify-center pt-16'
           onClick={handleCloseFullScreen}
         >
-          <div className='relative flex items-center justify-center p-2 sm:p-4 md:p-8 pb-20 sm:pb-24 md:pb-32 h-[60vh] sm:h-[70vh] md:h-[75vh]' style={{ maxWidth: '100vw', width: '100%', aspectRatio: '16/9' }}>
+          <div className='relative flex items-center justify-center p-2 sm:p-4 md:p-8 pb-20 sm:pb-24 md:pb-32 h-[80vh] sm:h-[88vh] md:h-[92vh] w-full max-w-none'>
             {/* Back Button */}
             <button
               onClick={handleCloseFullScreen}
