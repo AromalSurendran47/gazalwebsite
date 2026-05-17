@@ -231,20 +231,20 @@ const Contact = () => {
         </div>
 
         {/* Right Side - Form */}
-        <div className='w-full lg:w-1/2 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 lg:py-0 flex items-center justify-center min-h-[50vh] lg:min-h-screen pt-16 sm:pt-20 lg:pt-0'>
-          <div 
+        <div className='w-full lg:w-1/2 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 lg:py-0 flex items-center justify-center lg:justify-end lg:pr-4 xl:pr-8 min-h-[50vh] lg:min-h-screen pt-16 sm:pt-20 lg:pt-0'>
+          <div
             ref={formCardRef}
-            className='w-full max-w-xs sm:max-w-sm bg-white/[0.03] backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl border border-white/10 p-4 sm:p-6 md:p-8 lg:p-10 relative overflow-hidden'
+            className='w-full max-w-xs sm:max-w-sm bg-white/[0.03] backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl border border-white/10 p-4 sm:p-5 md:p-6 lg:p-7 relative overflow-hidden'
           >
             {/* Card Glow */}
             <div className='absolute -top-16 -right-16 sm:-top-20 sm:-right-20 w-32 h-32 sm:w-40 sm:h-40 bg-[#D3FD50]/20 rounded-full blur-3xl'></div>
             <div className='absolute -bottom-16 -left-16 sm:-bottom-20 sm:-left-20 w-32 h-32 sm:w-40 sm:h-40 bg-purple-500/10 rounded-full blur-3xl'></div>
 
             <div className='relative z-10'>
-              <h2 className='form-element font-[font2] text-xl sm:text-2xl md:text-3xl mb-2 text-center sm:text-left'>Send a message</h2>
-              <p className='form-element text-white/40 text-xs sm:text-sm mb-6 sm:mb-8 text-center sm:text-left'>We'll respond within 24 hours</p>
+              <h2 className='form-element font-[font2] text-xl sm:text-2xl md:text-3xl mb-1 text-center sm:text-left'>Send a message</h2>
+              <p className='form-element text-white/40 text-xs sm:text-sm mb-4 sm:mb-5 text-center sm:text-left'>We'll respond within 24 hours</p>
 
-              <form onSubmit={handleSubmit} className='space-y-4 sm:space-y-6'>
+              <form onSubmit={handleSubmit} className='space-y-3 sm:space-y-4'>
                 {/* Name */}
                 <div className='form-element relative'>
                   <input
@@ -254,7 +254,7 @@ const Contact = () => {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     onFocus={() => setActiveField('name')}
                     onBlur={() => setActiveField(null)}
-                    className={`w-full bg-white/5 border ${activeField === 'name' ? 'border-[#D3FD50]' : 'border-white/10'} rounded-lg sm:rounded-xl px-4 sm:px-5 py-3 sm:py-4 text-white placeholder:text-white/30 outline-none transition-all duration-300 focus:bg-white/[0.08] text-sm sm:text-base`}
+                    className={`w-full bg-white/5 border ${activeField === 'name' ? 'border-[#D3FD50]' : 'border-white/10'} rounded-lg sm:rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-white placeholder:text-white/30 outline-none transition-all duration-300 focus:bg-white/[0.08] text-sm sm:text-base`}
                   />
                 </div>
 
@@ -267,7 +267,7 @@ const Contact = () => {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     onFocus={() => setActiveField('email')}
                     onBlur={() => setActiveField(null)}
-                    className={`w-full bg-white/5 border ${activeField === 'email' ? 'border-[#D3FD50]' : 'border-white/10'} rounded-lg sm:rounded-xl px-4 sm:px-5 py-3 sm:py-4 text-white placeholder:text-white/30 outline-none transition-all duration-300 focus:bg-white/[0.08] text-sm sm:text-base`}
+                    className={`w-full bg-white/5 border ${activeField === 'email' ? 'border-[#D3FD50]' : 'border-white/10'} rounded-lg sm:rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-white placeholder:text-white/30 outline-none transition-all duration-300 focus:bg-white/[0.08] text-sm sm:text-base`}
                   />
                 </div>
 
@@ -275,12 +275,12 @@ const Contact = () => {
                 <div className='form-element relative'>
                   <textarea
                     placeholder='Your message'
-                    rows={4}
+                    rows={3}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     onFocus={() => setActiveField('message')}
                     onBlur={() => setActiveField(null)}
-                    className={`w-full bg-white/5 border ${activeField === 'message' ? 'border-[#D3FD50]' : 'border-white/10'} rounded-lg sm:rounded-xl px-4 sm:px-5 py-3 sm:py-4 text-white placeholder:text-white/30 outline-none transition-all duration-300 focus:bg-white/[0.08] resize-none text-sm sm:text-base`}
+                    className={`w-full bg-white/5 border ${activeField === 'message' ? 'border-[#D3FD50]' : 'border-white/10'} rounded-lg sm:rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-white placeholder:text-white/30 outline-none transition-all duration-300 focus:bg-white/[0.08] resize-none text-sm sm:text-base`}
                   />
                 </div>
 
@@ -288,7 +288,7 @@ const Contact = () => {
                 <button
                   type='submit'
                   disabled={isSubmitting || isSent}
-                  className={`w-full py-3 sm:py-4 font-[font2] uppercase tracking-wider text-xs sm:text-sm rounded-lg sm:rounded-xl transition-all duration-300 group flex items-center justify-center gap-2 ${
+                  className={`w-full py-2.5 sm:py-3 font-[font2] uppercase tracking-wider text-xs sm:text-sm rounded-lg sm:rounded-xl transition-all duration-300 group flex items-center justify-center gap-2 ${
                     isSent 
                       ? 'bg-green-500 text-white cursor-default' 
                       : isSubmitting
@@ -322,7 +322,7 @@ const Contact = () => {
               </form>
 
               {/* Bottom Text */}
-              <p className='form-element text-center text-white/30 text-xs mt-4 sm:mt-6 flex items-center justify-center gap-2 flex-wrap'>
+              <p className='form-element text-center text-white/30 text-xs mt-3 sm:mt-4 flex items-center justify-center gap-2 flex-wrap'>
                 <span>Dubai UAE</span>
                 <span className='text-[#D3FD50]'>●</span>
                 <span>Creative Production</span>
