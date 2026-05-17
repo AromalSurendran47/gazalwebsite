@@ -114,7 +114,7 @@ const FullScreenNav = () => {
                 <main className='pt-20 lg:pt-4 pb-32 lg:pb-46 px-4 lg:px-0' role='main'>
                     <ul className='space-y-0' role='list'>
                         <li role='listitem'>
-                            <Link to='/projects' onClick={() => setNavOpen(false)} className='link origin-top relative border-t-1 border-white block focus:outline-none focus:ring-2 focus:ring-[#D3FD50] focus:ring-offset-2 focus:ring-offset-black'>
+                            <Link to='/projects' onClick={() => setNavOpen(false)} className='link origin-top relative border-t-1 border-white block lg:pb-4 pb-2 focus:outline-none focus:ring-2 focus:ring-[#D3FD50] focus:ring-offset-2 focus:ring-offset-black'>
                                 <span className='font-[font2] text-3xl sm:text-4xl md:text-5xl lg:text-[8vw] text-center lg:leading-[0.8] leading-tight lg:pt-10 pt-6 pb-4 lg:pb-0 uppercase block'>Projects</span>
                                 <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
                                     <div className='moveX flex items-center'>
@@ -133,7 +133,7 @@ const FullScreenNav = () => {
                             </Link>
                         </li>
                         <li role='listitem'>
-                            <Link to='/services' onClick={() => setNavOpen(false)} className='link origin-top relative border-t-1 border-white block focus:outline-none focus:ring-2 focus:ring-[#D3FD50] focus:ring-offset-2 focus:ring-offset-black'>
+                            <Link to='/services' onClick={() => setNavOpen(false)} className='link origin-top relative border-t-1 border-white block lg:pb-4 pb-2 focus:outline-none focus:ring-2 focus:ring-[#D3FD50] focus:ring-offset-2 focus:ring-offset-black'>
                                 <span className='font-[font2] text-3xl sm:text-4xl md:text-5xl lg:text-[8vw] text-center lg:leading-[0.8] leading-tight lg:pt-10 pt-6 pb-4 lg:pb-0 uppercase block'>Services</span>
                                 <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
                                     <div className='moveX flex items-center'>
@@ -152,7 +152,7 @@ const FullScreenNav = () => {
                             </Link>
                         </li>
                         <li role='listitem'>
-                            <Link to='/contact' onClick={() => setNavOpen(false)} className='link origin-top relative border-t-1 border-white block focus:outline-none focus:ring-2 focus:ring-[#D3FD50] focus:ring-offset-2 focus:ring-offset-black'>
+                            <Link to='/contact' onClick={() => setNavOpen(false)} className='link origin-top relative border-t-1 border-white block lg:pb-4 pb-2 focus:outline-none focus:ring-2 focus:ring-[#D3FD50] focus:ring-offset-2 focus:ring-offset-black'>
                                 <span className='font-[font2] text-3xl sm:text-4xl md:text-5xl lg:text-[8vw] text-center lg:leading-[0.8] leading-tight lg:pt-10 pt-6 pb-4 lg:pb-0 uppercase block'>Contact</span>
                                 <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
                                     <div className='moveX flex items-center'>
