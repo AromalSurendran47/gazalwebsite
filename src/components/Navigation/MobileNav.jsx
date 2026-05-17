@@ -50,7 +50,7 @@ const MobileNav = () => {
                     aria-label='Go to home'
                     type='button'
                 >
-                    <img src={logoMain} alt='Logo' className='w-10 h-auto object-contain' />
+                    <img src={logoMain} alt='Logo' className='w-14 h-auto object-contain' />
                 </button>
                 <button
                     onClick={() => setMobileOpen(true)}
@@ -82,7 +82,7 @@ const MobileNav = () => {
                     aria-label='Mobile navigation'
                 >
                     <div className='flex items-center justify-between px-5 py-4 border-b border-white/10'>
-                        <img src={logoMain} alt='Logo' className='w-10 h-auto object-contain' />
+                        <img src={logoMain} alt='Logo' className='w-14 h-auto object-contain' />
                         <button
                             onClick={() => setMobileOpen(false)}
                             className='relative w-10 h-10 rounded-full bg-white/5 active:scale-95 transition-transform flex items-center justify-center'
