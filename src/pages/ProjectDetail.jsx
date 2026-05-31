@@ -4,6 +4,50 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import { useNavigate, useParams } from 'react-router-dom'
 import { slugify } from '../utils/slugify'
+import SEO from '../components/SEO/SEO'
+
+const PROJECT_SEO = {
+  automotive: {
+    title: 'Automotive Cinematography - MV Agusta & High-End Car Videos',
+    description: 'High-octane automotive cinematography by Metis Prime Production. Premium car and motorbike reels including MV Agusta F3 shoots, crafted in Dubai, UAE.',
+    keywords: 'automotive videography Dubai, MV Agusta F3 video, car cinematography UAE, motorbike reel, automotive video production, Metis Prime Production',
+    image: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339105/AUTOMOTIVE_dj5f0c.jpg',
+    heading: 'Automotive',
+    type: 'Cinematography'
+  },
+  fitness: {
+    title: 'Fitness Videography - Gym & Workout Reels Dubai',
+    description: 'Fitness videography by Metis Prime Production featuring Gym Hawk Zone and Red Gym Dubai. Energetic gym reels, workout content, and fitness brand storytelling.',
+    keywords: 'fitness videography Dubai, gym video production UAE, workout reels, fitness content creator Dubai, Red Gym Dubai, Gym Hawk Zone, Metis Prime Production',
+    image: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774721957/fitness_display_eh17dl.jpg',
+    heading: 'Fitness',
+    type: 'Videography'
+  },
+  'food-reel': {
+    title: 'Food Videography - Restaurant & Culinary Reels',
+    description: 'Culinary visual storytelling by Metis Prime Production. Food reels and restaurant videography for Hilton Garden Inn, Saj, Luciya Trivandrum and more.',
+    keywords: 'food videography Dubai, restaurant video production, food reel, Hilton Garden Inn Trivandrum, culinary cinematography, food branding video, Metis Prime Production',
+    image: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336858/food_reel_post_wkwjpq.jpg',
+    heading: 'Food Reel',
+    type: 'Videography'
+  },
+  potraits: {
+    title: 'Perfume Branding & Product Videography',
+    description: 'Perfume branding shoots by Metis Prime Production featuring Amber Juice, Leather Black and After Dark. Cinematic product videography for fragrance brands.',
+    keywords: 'perfume branding video, product videography Dubai, fragrance video production, perfume reel, Amber Juice, Leather Black, After Dark, Metis Prime Production',
+    image: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773336855/potraits_r2mmme.jpg',
+    heading: 'Perfume',
+    type: 'Branding'
+  },
+  drift: {
+    title: 'DX Drift & Motorsport Event Videography',
+    description: 'Adrenaline-fueled drift and motorsport event coverage by Metis Prime Production. Live stunt event capture, DX Drift UAE, HD stunt and Club Style Dubai.',
+    keywords: 'drift video Dubai, motorsport videography UAE, DX Drift, HD stunt video, stunt event coverage, Club Style Dubai, Metis Prime Production',
+    image: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774799665/event_1_wxvyin.jpg',
+    heading: 'Drift',
+    type: 'Event Coverage'
+  }
+}
 
 // Video Card Component
 const VideoCard = ({ project, handleVideoMouseEnter, handleVideoMouseLeave }) => {
@@ -614,8 +658,49 @@ const ProjectDetail = () => {
     }
   }
 
+  const seo = PROJECT_SEO[slug] || {
+    title: 'Project Showcase',
+    description: 'Explore creative visual production work by Metis Prime Production — Dubai based agency for cinematic videography, branding and digital production.',
+    keywords: 'Metis Prime Production, creative portfolio Dubai, visual production UAE',
+    image: 'https://metisprimeproduction.com/logo-main.PNG',
+    heading: 'Our Work',
+    type: 'Project'
+  }
+
+  const canonical = `https://metisprimeproduction.com/project/${slug}`
+
   return (
     <div className='min-h-screen bg-black text-white font-[font1] overflow-hidden'>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        ogImage={seo.image}
+        ogUrl={canonical}
+        canonicalUrl={canonical}
+        type='article'
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'CreativeWork',
+          name: seo.heading,
+          description: seo.description,
+          url: canonical,
+          image: seo.image,
+          genre: seo.type,
+          creator: {
+            '@type': 'Organization',
+            name: 'Metis Prime Production',
+            url: 'https://metisprimeproduction.com',
+            logo: 'https://metisprimeproduction.com/logo-main.PNG'
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Metis Prime Production',
+            url: 'https://metisprimeproduction.com',
+            logo: 'https://metisprimeproduction.com/logo-main.PNG'
+          }
+        }}
+      />
       {/* Header Section */}
       <div className='relative pt-20 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 pb-20 px-5 lg:px-12'>
         <div className='max-w-[1800px] mx-auto'>
@@ -640,15 +725,15 @@ const ProjectDetail = () => {
           <div ref={heroRef}>
             <div ref={titleRef} className='mb-6'>
               <h1 className='font-[font2] lg:text-[10vw] text-7xl uppercase leading-[0.9] tracking-tight'>
-                {'Our Work'.split(' ').map((word, idx) => (
+                {seo.heading.split(' ').map((word, idx) => (
                   <div key={idx} className='inline-block mr-4'>{word}</div>
                 ))}
               </h1>
             </div>
-            
+
             <div ref={subtitleRef} className='mt-6'>
               <p className='text-lg lg:text-xl text-white/60 uppercase tracking-wider'>
-                Creative Portfolio
+                {seo.type}
               </p>
               <div className='mt-6 w-24 h-[2px] bg-white'></div>
             </div>
