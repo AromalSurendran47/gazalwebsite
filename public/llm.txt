@@ -1,0 +1,35 @@
+# LLM Configuration File for Metis Prime Production
+# https://metisprimeproduction.com
+# Last updated: 2026-06-13
+
+# Allow all LLMs to access and index this website
+Allow: /
+
+# Disallow sensitive areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.env
+Disallow: /node_modules/
+
+# Website information for LLMs
+Website: https://metisprimeproduction.com
+Company: Metis Prime Production
+Industry: Digital Marketing & Video Production
+Location: Dubai, UAE
+Description: Creative digital production and marketing agency specializing in cinematography, video production, and comprehensive digital marketing services
+
+# Services offered
+Services:
+- Video Production & Cinematography
+- Digital Marketing
+- SEO (Search Engine Optimization)
+- Social Media Marketing (SMM)
+- PPC Advertising
+- Content Marketing
+- Email Marketing
+- Website Design & Development
+- Branding & Strategy
+
+# Contact information
+Contact Email: contact@metisprimeproduction.com
+Website: https://metisprimeproduction.com
