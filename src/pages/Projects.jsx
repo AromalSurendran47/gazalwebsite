@@ -60,16 +60,6 @@ const Projects = () => {
       description1: 'Adrenaline-fueled drifting action',
       title2: '',
       description2: ''
-    },
-    {
-      image1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339105/AUTOMOTIVE_dj5f0c.jpg',
-      video1: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339105/AUTOMOTIVE_dj5f0c.mp4',
-      video2: '',
-      projectId: 6,
-      title1: 'Road Stories',
-      description1: 'Cinematic road journey stories',
-      title2: '',
-      description2: ''
     }
   ]
 

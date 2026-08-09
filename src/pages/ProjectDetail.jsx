@@ -46,14 +46,6 @@ const PROJECT_SEO = {
     image: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1774799665/event_1_wxvyin.jpg',
     heading: 'Drift',
     type: 'Event Coverage'
-  },
-  'road-stories': {
-    title: 'Road Stories - Travel & Journey Cinematography',
-    description: 'Cinematic road journey stories by Metis Prime Production. Capturing the beauty of open roads, travel adventures, and moving landscapes.',
-    keywords: 'road stories video, travel cinematography Dubai, journey videography UAE, road trip reel, travel content creator, Metis Prime Production',
-    image: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1773339105/AUTOMOTIVE_dj5f0c.jpg',
-    heading: 'Road Stories',
-    type: 'Cinematography'
   }
 }
 
@@ -517,14 +509,14 @@ const ProjectDetail = () => {
       id: 22,
       title: 'Road Stories',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1786257512/mpp_1_hbgxxg.mp4',
-      category: 'Road Stories',
+      category: 'Automotive',
       description: 'Cinematic Road Journey'
     },
     {
       id: 23,
       title: 'Road Stories',
       video: 'https://res.cloudinary.com/dr47btnx9/video/upload/v1786259525/mpp_2_burqbr.mp4',
-      category: 'Road Stories',
+      category: 'Automotive',
       description: 'Cinematic Road Journey'
     }
   ]
@@ -535,8 +527,7 @@ const ProjectDetail = () => {
     'fitness': '2',
     'food-reel': '3',
     'potraits': '4',
-    'drift': '5',
-    'road-stories': '6'
+    'drift': '5'
   }
 
   // Convert slug to ID if needed
@@ -544,7 +535,7 @@ const ProjectDetail = () => {
 
   // Filter projects based on URL parameter
   const filteredProjects = projectId === '1'
-    ? projects.filter(project => project.id === 1 || project.id === 20) // Show automotive videos for projectId 1
+    ? projects.filter(project => project.id === 1 || project.id === 20 || project.id === 22 || project.id === 23) // Show automotive videos for projectId 1
     : projectId === '2'
       ? projects.filter(project => project.id === 5 || project.id === 10 || project.id === 11 || project.id === 12 || project.id === 21) // Show interior and gym videos for projectId 2
       : projectId === '3'
@@ -553,9 +544,7 @@ const ProjectDetail = () => {
           ? projects.filter(project => project.id === 6 || project.id === 13 || project.id === 14) // Show portrait videos for projectId 4
           : projectId === '5'
             ? projects.filter(project => project.id === 2 || project.id === 18 || project.id === 19) // Show drift videos for projectId 5
-            : projectId === '6'
-              ? projects.filter(project => project.id === 22 || project.id === 23) // Show road stories videos for projectId 6
-              : projects.filter(project => project.id === parseInt(projectId))
+            : projects.filter(project => project.id === parseInt(projectId))
 
 
   gsap.registerPlugin(ScrollTrigger)

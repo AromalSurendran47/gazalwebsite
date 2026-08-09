@@ -114,19 +114,6 @@
     </image:image>
   </url>
 
-  <!-- Project Detail: Road Stories Cinematography -->
-  <url>
-    <loc>https://metisprimeproduction.com/project/road-stories</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://res.cloudinary.com/dr47btnx9/video/upload/v1786257512/mpp_1_hbgxxg.jpg</image:loc>
-      <image:title>Road Stories - Travel &amp; Journey Cinematography</image:title>
-      <image:caption>Cinematic road journey stories capturing the beauty of open roads and travel adventures by Metis Prime Production, Dubai</image:caption>
-    </image:image>
-  </url>
-
   <!-- Contact Page -->
   <url>
     <loc>https://metisprimeproduction.com/contact</loc>
